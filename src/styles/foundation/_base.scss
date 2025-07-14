@@ -7,7 +7,7 @@
   @each $key, $property in $colors {
     --color-#{$key}: #{map.get($property, "hex")};
   }
-  // /* fontFamily */
+  /* fontFamily */
   @each $key, $property in $fontFamily {
     --font-#{$key}: #{$property};
   }
@@ -26,5 +26,9 @@
   /* tracking */
   @each $key, $property in $tracking {
     --tracking-#{$key}: #{$property};
+  }
+  /* fontWeight */
+  @each $key, $property in $fontWeight {
+    --font-weight-#{$key}: #{$property};
   }
 }

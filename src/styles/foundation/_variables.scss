@@ -48,6 +48,12 @@ $colors: (
   "neutral-900": (
     "hex": #212121,
   ),
+  "white": (
+    "hex": #ffffff,
+  ),
+  "black": (
+    "hex": #000000,
+  ),
 );
 
 // $fontFamily
@@ -88,4 +94,11 @@ $tracking: (
   "lg": 0.1em,
   "xl": 0.12em,
   "2xl": 0.15em,
+);
+
+// $fontWeight
+$fontWeight: (
+  "500": 500,// medium
+  "700": 700,// bold
+  "900": 900,// black
 );
