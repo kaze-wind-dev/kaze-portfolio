@@ -4,19 +4,19 @@
 // $colors
 $colors: (
   "primary": (
-    "hex": #48ABF9,
+    "hex": #48abf9,
   ),
   "secondary": (
-    "hex": #73C2FB,
+    "hex": #73c2fb,
   ),
   "tertiary": (
-    "hex": #5BB8F7,
+    "hex": #5bb8f7,
   ),
   "accent-lightness": (
-    "hex": #5BB8F7,
+    "hex": #5bb8f7,
   ),
   "accent-darken": (
-    "hex": #5BB8F7,
+    "hex": #5bb8f7,
   ),
   "neutral-50": (
     "hex": #fafafa,
@@ -98,7 +98,18 @@ $tracking: (
 
 // $fontWeight
 $fontWeight: (
-  "500": 500,// medium
-  "700": 700,// bold
-  "900": 900,// black
+  "500": 500,
+  // medium
+  "700": 700,
+  // bold
+  "900": 900,
+  // black
 );
+
+$breakpoints: (
+  "sm": "screen and (min-width: 480px)",
+  "md": "screen and (min-width: 768px)",
+  "lg": "screen and (min-width: 1024px)",
+  "xl": "screen and (min-width: 1200px)",
+  "2xl": "screen and (min-width: 1440px)",
+) !default;
