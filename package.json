@@ -11,7 +11,6 @@
   "dependencies": {
     "@splidejs/splide": "^4.1.4",
     "gsap": "^3.13.0",
-    "lucide-react": "^0.525.0",
     "modern-normalize": "^3.0.1",
     "next": "15.3.5",
     "react": "^19.0.0",
