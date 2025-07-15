@@ -2,6 +2,18 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   /* config options here */
+    sassOptions: {
+    implementation: 'sass',
+    api: 'modern',
+  },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.microcms-assets.io',
+      },
+    ],
+  },
 };
 
 export default nextConfig;
