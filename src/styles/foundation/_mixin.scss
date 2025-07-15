@@ -1,1 +1,25 @@
-// mixin 
+// mixin
+
+@mixin setFont(
+  $family: null,
+  $weight: null,
+  $tracking: null,
+  $leading: null,
+  $size: null
+) {
+  @if ($family != null) {
+    font-family: #{$family};
+  }
+  @if ($weight != null) {
+    font-weight: #{$weight};
+  }
+  @if ($tracking != null) {
+    letter-spacing: #{$tracking};
+  }
+  @if ($leading != null) {
+    line-height: #{$leading};
+  }
+  @if ($size != null) {
+    font-size: #{$size};
+  }
+}
