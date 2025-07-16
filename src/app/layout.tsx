@@ -1,15 +1,20 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Zen_Kaku_Gothic_New,Outfit} from "next/font/google";
 import "@/styles/global.scss"
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+import Header from "@/components/layout/Header";
+const ZenKakuGothicNewFont = Zen_Kaku_Gothic_New({
+   weight: ["400","500","700"],
   subsets: ["latin"],
+   variable: "--font-zenkaku-gothic-new",
+   display: 'swap',
+   preload:true,
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const OutfitFont = Outfit({
+   weight: "700",
   subsets: ["latin"],
+   variable: "--font-outfit",
+   display: 'swap'
 });
 
 export const metadata: Metadata = {
@@ -23,8 +28,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ja">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+    <html lang="ja" className={`${ZenKakuGothicNewFont.variable} ${OutfitFont.variable}`}>
+      <body >
+      <Header/>
         {children}
       </body>
     </html>
