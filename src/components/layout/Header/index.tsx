@@ -6,43 +6,29 @@ const Header = () => {
   return (
     <header className="header" id="header">
       <div className="header__inner">
-        <div className="header__logo">
-          <Link href="/">
-            <Logo />
-          </Link>
-        </div>
+        <Logo className="header__logo" />
         <div className="header__line">
           <nav className="header__nav">
             <ul className="header__nav-list">
               <li className="header__nav-item">
-                <Link href="/" className="header__nav-link">
-                  Top
-                </Link>
+                <Link href="/" className="header__nav-link">Top</Link>
               </li>
               <li className="header__nav-item">
-                <Link href="/about" className="header__nav-link">
-                  About
-                </Link>
+                <Link href="/about" className="header__nav-link">About</Link>
               </li>
               <li className="header__nav-item">
-                <Link href="/works" className="header__nav-link">
-                  Works
-                </Link>
+                <Link href="/works" className="header__nav-link">Works</Link>
               </li>
               <li className="header__nav-item">
-                <Link href="/articles" className="header__nav-link">
-                  Articles
-                </Link>
+                <Link href="/articles" className="header__nav-link">Articles</Link>
               </li>
               <li className="header__nav-item">
-                <Link href="/contact" className="header__nav-link">
-                  Contact
-                </Link>
+                <Link href="/contact" className="header__nav-link">Contact</Link>
               </li>
             </ul>
           </nav>
           <div className="header__icon-list">
-          <IconList/>
+            <IconList />
           </div>
         </div>
       </div>
