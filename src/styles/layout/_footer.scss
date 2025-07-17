@@ -1,6 +1,47 @@
 @use "sass:map";
-@use "variables" as *;
-@use "mixin" as mixin;
-
+@use "../foundation/variables" as *;
+@use "../foundation/mixin" as mixin;
 /* Footer
    ----------------------------------------------------------------- */
+
+.footer {
+  border-top: 1px solid var(--color-neutral-200);
+  padding-block: 56px 24px;
+  @include mixin.mq("md") {
+    padding-block: 72px 24px;
+  }
+  &__inner {
+    //  padding: 12px 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__nav {
+    &-list {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 20px;
+      @include mixin.mq("md") {
+           gap: 24px;
+      }
+    }
+
+    &-link {
+      font-weight: var(--font-weight-700);
+      font-size: var(--text-sm);
+      @include mixin.mq("md") {
+         font-size: var(--text-base);
+      }
+    }
+  }
+  &__icon-list {
+    margin-top: 28px;
+  }
+  &__copyright {
+    font-size: var(--text-sm);
+    text-align: center;
+    margin-top: 36px;
+  }
+}
