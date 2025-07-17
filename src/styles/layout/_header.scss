@@ -22,23 +22,23 @@
 
   &__logo {
     width: 180px;
+    display: block;
+    transition: 0.3s;
     @include mixin.mq("md") {
       width: 240px;
     }
     @include mixin.mq("lg") {
       width: 268px;
     }
-    a,
+
     svg {
       width: 100%;
       height: auto;
       display: block;
     }
-    a {
-      transition: 0.3s;
-      display: block;
-    }
-    a:hover {
+   
+    
+    &:hover {
       opacity: 0.7;
     }
   }
