@@ -11,7 +11,7 @@ type Props = {
 const Logo = ({ width = 581, height = 104, link = false, className }: Props) => {
   return (
     link ? 
-      <Link href="/" className={`${className}`}>
+      <Link href="/" className={`${className || ""}`}>
         <LogoImage width={width} height={height} />
       </Link>
     :
