@@ -1,55 +1,51 @@
 @use "@/styles/foundation/mixin" as mixin;
-/* Button
+/* Hero
    ----------------------------------------------------------------- */
-
-.c-button {
-  border-radius: 4px;
-  text-align: center;
-  padding: 16px 16px;
-  display: block;
-  @include mixin.setFont($weight: var(--font-weight-700));
-  @include mixin.mq("md") {
-    padding: 18px 20px;
-  }
+.c-hero {
+  padding-block: var(--spacing-6) var(--spacing-15);
   @include mixin.mq("lg") {
-    padding: 20px 24px;
+    padding-block: var(--spacing-8) var(--spacing-15);
   }
-  &--primary {
-    box-shadow: 0 0 6px rgb(var(--color-black-rgb) / 0.1);
-    background-color: var(--color-primary);
-    transition: background-color 0.3s, box-shadow 0.3s;
-    color: var(--color-white);
+  &__title {
+    display: flex;
+    flex-direction: column;
+    font-weight: var(--font-weight-700);
+    gap: 12px;
     @include mixin.mq("lg") {
-      box-shadow: 0 0 8px rgb(var(--color-black-rgb) / 0.1);
-    }
-    &:hover {
-      background-color: var(--color-accent-darken);
-      box-shadow: 0 0 10px rgb(var(--color-black-rgb) / 0.2);
-      opacity: 1;
-      @include mixin.mq("lg") {
-        box-shadow: 0 0 12px rgb(var(--color-black-rgb) / 0.2);
-      }
+      gap: 16px;
     }
   }
-  &--small {
-    width: 100%;
-    @include mixin.mq("sm") {
-      max-width: 240px;
+  &__heading {
+    letter-spacing: var(--tracking-base);
+    font-family: var(--font-secondary);
+    font-size: var(--text-6xl);
+    line-height: var(--leading-none);
+    @include mixin.mq("md") {
+      font-size: var(--text-8xl);
+    }
+    @include mixin.mq("lg") {
+      font-size: var(--text-9xl);
     }
   }
-  &--medium {
-    width: 100%;
-    @include mixin.mq("sm") {
-      max-width: 320px;
+  &__sub-title {
+    font-size: var(--text-md);
+    letter-spacing: var(--tracking-base);
+    @include mixin.mq("md") {
+      font-size: var(--text-lg);
+    }
+    @include mixin.mq("lg") {
+      font-size: var(--text-xl);
     }
   }
-  &--large {
-    width: 100%;
-    @include mixin.mq("sm") {
-      max-width: 400px;
+  &__description {
+    font-weight: var(--font-weight-700);
+    line-height: var(--leading-lg);
+    margin-top: var(--spacing-10);
+    @include mixin.mq("md") {
+      margin-top: var(--spacing-12);
     }
-  }
-  &--fit {
-    width: fit-content;
+    @include mixin.mq("lg") {
+      margin-top: var(--spacing-16);
+    }
   }
 }
