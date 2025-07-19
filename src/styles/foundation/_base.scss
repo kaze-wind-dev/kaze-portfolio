@@ -55,6 +55,11 @@ a:hover {
   text-decoration: none;
 }
 
+::selection {
+  color: var(--color-white);
+  background-color: var(--color-primary);
+}
+
 /* inner */
 .inner {
   width: 90%;
