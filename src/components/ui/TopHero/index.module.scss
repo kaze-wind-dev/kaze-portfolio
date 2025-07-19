@@ -2,7 +2,7 @@
 
 /* TopHero
    ----------------------------------------------------------------- */
-.c-topHero {
+.p-topHero {
   align-content: center;
   text-align: center;
   background: linear-gradient(
@@ -27,14 +27,11 @@
 
   &__logo {
     order: 1;
-    // max-width: 320px;
     width: min(320px, 90%);
     @include mixin.mq("sm") {
-      // max-width: unset;
       width: 375px;
     }
     @include mixin.mq("md") {
-      // max-width: unset;
       width: 420px;
     }
     @include mixin.mq("lg") {
@@ -64,7 +61,6 @@
   }
   &__actions {
     order: 3;
-    // width: 90%;
     width: 100%;
     display: grid;
     justify-items: center;
