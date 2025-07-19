@@ -1,5 +1,5 @@
-import Logo from "../Logo";
-import Button from "../Button";
+import Logo from "@/components/ui/Logo";
+import Button from "@/components/ui/Button";
 import styles from "./index.module.scss";
 
 const TopHero = () => {
