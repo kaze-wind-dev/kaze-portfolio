@@ -4,7 +4,7 @@ import {
   getWorksList,
   getWorksCategoryList,
   getCategoryDetail,
-} from "@/lib/api/microcms/crient";
+} from "@/lib/api/microcms";
 import { Breadcrumbs } from "@/components/ui/BreadCrumb";
 import WorksCard from "@/components/ui/Card/WorksCard";
 import CardsContainer from "@/components/ui/CardsContainer";

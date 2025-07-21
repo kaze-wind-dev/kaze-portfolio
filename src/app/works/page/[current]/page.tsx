@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { WORKS_LIST_LIMIT } from "@/constants";
-import { getWorksList, getWorksCategoryList } from "@/lib/api/microcms/crient";
+import { getWorksList, getWorksCategoryList } from "@/lib/api/microcms";
 import { Breadcrumbs } from "@/components/ui/BreadCrumb";
 import WorksCard from "@/components/ui/Card/WorksCard";
 import CardsContainer from "@/components/ui/CardsContainer";
