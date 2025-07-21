@@ -1,0 +1,59 @@
+@use "@/styles/foundation/mixin" as mixin;
+/* Category Filter
+   ----------------------------------------------------------------- */
+.c-categoryFilter {
+  // width: 100%;
+  width: 100%;
+  // &__item {}
+  display: flex;
+  gap: var(--spacing-2);
+  margin-bottom: var(--spacing-10);
+  
+  @include mixin.mq("md") {
+    gap: var(--spacing-3);
+    margin-bottom: var(--spacing-12);
+  }
+  @include mixin.mq("lg") {
+    gap: var(--spacing-4);
+    margin-bottom: var(--spacing-14);
+  }
+  &__btn {
+  }
+  &__link {
+    border-radius: 4px;
+    text-align: center;
+    padding: var(--spacing-2) var(--spacing-6);
+    display: block;
+    font-size: var(--text-sm);
+    background: var(--color-neutral-300);
+    color: var(--color-neutral-600);
+    transition: color .3s background .3s;
+    &:hover{
+      opacity: 1;
+         color: var(--color-white);
+      background: var(--color-accent-darken);
+    }
+    @include mixin.setFont($weight: var(--font-weight-700));
+    @include mixin.mq("md") {
+    padding: var(--spacing-3) var(--spacing-7);
+    }
+    @include mixin.mq("lg") {
+      font-size: var(--text-base);
+    padding: var(--spacing-3) var(--spacing-8);
+    }
+    &--current {
+      color: var(--color-white);
+      background: var(--color-accent-darken);
+    }
+  }
+  // &__btn {
+  //   width: 100%;
+  //   position: relative;
+  //   z-index: 1;
+
+  //   margin-bottom: var(--spacing-3);
+  //   @include mixin.mq("md") {
+  //     margin-bottom: var(--spacing-4);
+  //   }
+  // }
+}
