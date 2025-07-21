@@ -47,6 +47,9 @@ body {
     $leading: var(--leading-base),
     $size: var(--text-base)
   );
+  overflow-wrap: anywhere;
+  word-break: normal;
+  line-break: strict;
 }
 
 
@@ -69,3 +72,8 @@ a:hover {
     max-width: 1280px;
   }
 }
+
+/* nopost-message */
+.nopost-message{
+  font-weight: var(--font-weight-700);
+} 
