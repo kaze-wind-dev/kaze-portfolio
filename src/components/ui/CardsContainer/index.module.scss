@@ -3,13 +3,11 @@
 /* cards container
    ----------------------------------------------------------------- */
 .c-cards-container {
-  // display: grid;
-  // grid-template-columns: minmax(0, 1fr);
   display: grid;
+  gap: var(--spacing-7);
+  grid-template-columns:minmax(0, 1fr);
   
-
   @include mixin.mq("sm") {
-    gap: 24px;
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   @include mixin.mq("md") {

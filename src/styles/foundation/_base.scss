@@ -45,11 +45,15 @@ body {
     $weight: var(--font-weight-500),
     $tracking: var(--tracking-base),
     $leading: var(--leading-base),
-    $size: var(--text-base)
+    $size: var(--text-sm)
   );
   overflow-wrap: anywhere;
   word-break: normal;
   line-break: strict;
+  @include mixin.mq("lg"){
+    font-size: var(--text-base),
+
+  }
 }
 
 

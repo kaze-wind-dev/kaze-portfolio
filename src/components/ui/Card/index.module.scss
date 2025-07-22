@@ -2,9 +2,8 @@
 /* Card
    ----------------------------------------------------------------- */
 .c-card {
-  // width: 100%;
   width: 100%;
-
+  
   &__header {
     width: 100%;
     position: relative;
@@ -52,12 +51,9 @@
     width: 100%;
     font-weight: var(--font-weight-700);
     letter-spacing: var(--tracking-base);
-    font-size: var(--text-base);
+    font-size: var(--text-md);
     @include mixin.lineClamp(1);
 
-    @include mixin.mq("sm") {
-      font-size: var(--text-md);
-    }
     @include mixin.mq("md") {
       font-size: var(--text-lg);
     }
@@ -66,11 +62,7 @@
     width: 100%;
     font-weight: var(--font-weight-700);
     letter-spacing: var(--tracking-base);
-    // font-size: var(--text-xs);
     font-size: var(--text-sm);
-    // line-height: var(--leading-md);
-    // @include mixin.mq("md") {
-    // }
     @include mixin.lineClamp(2);
   }
   &__period,
