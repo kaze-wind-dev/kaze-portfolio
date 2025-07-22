@@ -1,0 +1,186 @@
+import { notFound } from "next/navigation";
+import { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
+import { getWorksDetail } from "@/lib/api/microcms";
+import { GoLink } from "react-icons/go";
+import Button from "@/components/ui/Button";
+import Category from "@/components/ui/Category";
+import { Breadcrumbs } from "@/components/ui/BreadCrumb";
+
+import styles from "./index.module.scss";
+
+type Props = {
+  params: {
+    id: string;
+  };
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const data = await getWorksDetail(params.id);
+  if (!data) {
+    notFound();
+  }
+  return {
+    title: data.title,
+    description: data.description,
+    openGraph: {
+      title: data.title,
+      description: data.description,
+      images: [
+        {
+          url: data.thumbnail?.url || "ogp.jpg",
+          width: data.thumbnail?.width || 1200,
+          height: data.thumbnail?.height || 630,
+          alt: data.title || "Kaze Portfolio OGP画像",
+        },
+      ],
+    },
+  };
+}
+
+export default async function WorksDetailPage({ params }: Props) {
+  const data = await getWorksDetail(params.id);
+
+  return (
+    <main>
+      <Breadcrumbs
+        items={[
+          { name: "Works", href: "/works" },
+          {
+            name: data.category.name,
+            href: `/works/category/${data.category.id}`,
+          },
+          { name: data.title },
+        ]}
+      />
+      <article className={`${styles["p-works-detail"]}`}>
+        <div className="inner">
+          <div className={styles["p-works-detail__category"]}>
+            <Category name={data.category.name} />
+          </div>
+          <h1 className={styles["p-works-detail__title"]}>{data.title}</h1>
+          <p className={styles["p-works-detail__description"]}>
+            {data.description}
+          </p>
+          <div className={`${styles["p-works-detail__container"]}`}>
+            <div className={`${styles["p-works-detail__l-content"]}`}>
+              <figure className={styles["p-works-detail__thumbnail"]}>
+                <Image
+                  src={data.thumbnail?.url || `/images/no_image.jpg`}
+                  width={data.thumbnail?.width || 640}
+                  height={data.thumbnail?.height || 480}
+                  alt={data.thumbnail?.alt || `no image`}
+                />
+              </figure>
+              {data.images && (
+                <div className={styles["p-works-detail__gallery"]}>
+                  {data.images.map((image, index) => (
+                    <div
+                      key={index}
+                      className={styles["p-works-detail__gallery-image"]}
+                    >
+                      <Image
+                        src={image.url}
+                        width={image.width}
+                        height={image.height}
+                        alt={`${data.title} 画像${index + 1}`}
+                      />
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+            <div className={`${styles["p-works-detail__r-content"]}`}>
+              {data.site_url && (
+                <section className={`${styles["p-works-detail__item"]}`}>
+                  <h2 className={`${styles["p-works-detail__item-title"]}`}>
+                    サイトURL
+                  </h2>
+                  <Link
+                    className={`${styles["p-works-detail__item-link"]}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href={data.site_url}
+                  >
+                    <GoLink />
+                    {data.site_url}
+                  </Link>
+                </section>
+              )}
+              {data.design_url && (
+                <section className={`${styles["p-works-detail__item"]}`}>
+                  <h2 className={`${styles["p-works-detail__item-title"]}`}>
+                    デザインURL
+                  </h2>
+                  <Link
+                    className={`${styles["p-works-detail__item-link"]}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href={data.design_url}
+                  >
+                    <GoLink className="icon-link" />
+                    {data.design_url}
+                  </Link>
+                </section>
+              )}
+              {data.period && (
+                <section className={`${styles["p-works-detail__item"]}`}>
+                  <h2 className={`${styles["p-works-detail__item-title"]}`}>
+                    制作期間
+                  </h2>
+                  <p className={`${styles["p-works-detail__item-text"]}`}>
+                    {data.period}
+                  </p>
+                </section>
+              )}
+              {data.time && (
+                <section className={`${styles["p-works-detail__item"]}`}>
+                  <h2 className={`${styles["p-works-detail__item-title"]}`}>
+                    制作時間
+                  </h2>
+                  <p className={`${styles["p-works-detail__item-text"]}`}>
+                    {data.time}時間
+                  </p>
+                </section>
+              )}
+              {data.background && (
+                <section className={`${styles["p-works-detail__item"]}`}>
+                  <h2 className={`${styles["p-works-detail__item-title"]}`}>
+                    制作背景・課題
+                  </h2>
+                  <p className={`${styles["p-works-detail__item-text"]}`}>
+                    {data.background}
+                  </p>
+                </section>
+              )}
+              {data.learned && (
+                <section className={`${styles["p-works-detail__item"]}`}>
+                  <h2 className={`${styles["p-works-detail__item-title"]}`}>
+                    学んだこと・成果
+                  </h2>
+                  <p className={`${styles["p-works-detail__item-text"]}`}>
+                    {data.learned}
+                  </p>
+                </section>
+              )}
+              {data.technology_stack && (
+                <section className={`${styles["p-works-detail__item"]}`}>
+                  <h2 className={`${styles["p-works-detail__item-title"]}`}>
+                    使用言語など
+                  </h2>
+                  <p className={`${styles["p-works-detail__item-text"]}`}>
+                    {data.technology_stack.join(" / ")}
+                  </p>
+                </section>
+              )}
+            </div>
+          </div>
+          <div className={`${styles["p-works-detail__button"]}`}>
+            <Button href="/works" className="mx-center">一覧に戻る</Button>
+          </div>
+        </div>
+      </article>
+    </main>
+  );
+}
