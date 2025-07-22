@@ -13,6 +13,7 @@ export type Works = {
   thumbnail?: MicroCMSImage;
   images?: MicroCMSImage[];
   category: {
+    id: string;
     name: string;
   };
   technology_stack: string[];
