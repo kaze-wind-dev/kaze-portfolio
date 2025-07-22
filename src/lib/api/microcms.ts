@@ -1,6 +1,6 @@
 import { createClient } from "microcms-js-sdk";
 import type { MicroCMSQueries } from "microcms-js-sdk";
-import type { Works,WorksCategory,Category } from "@/types/microcms";
+import type { Works, WorksCategory, Category } from "@/types/microcms";
 
 // 環境変数のMICROCMS_SERVICE_DOMAINの設定確認
 if (!process.env.MICROCMS_SERVICE_DOMAIN) {
@@ -18,37 +18,42 @@ export const client = createClient({
   apiKey: process.env.MICROCMS_API_KEY,
 });
 
-
 // 作品紹介一覧
-export const getWorksList = async(queries?: MicroCMSQueries) => {
+export const getWorksList = async (queries?: MicroCMSQueries) => {
   const listData = await client.getList<Works>({
     endpoint: "works",
     queries,
   });
   return listData;
-}
+};
 
 // 作品紹介詳細
-export const getWorksDetail = async(
-  contentId:string,
-  queries?:MicroCMSQueries
-)=>{
+export const getWorksDetail = async (
+  contentId: string,
+  queries?: MicroCMSQueries
+) => {
   const singleData = await client.getListDetail<Works>({
-  endpoint: "works",
+    endpoint: "works",
     contentId,
     queries,
+    customRequestInit: {
+      next: {
+        revalidate: queries?.draftKey === undefined ? 60 : 0,
+      },
+    },
   });
+
   return singleData;
-}
+};
 
 // 作品紹介カテゴリー
-export const getWorksCategoryList = async(queries?: MicroCMSQueries) => {
+export const getWorksCategoryList = async (queries?: MicroCMSQueries) => {
   const worksCategoryList = await client.getList<WorksCategory>({
     endpoint: "works-category",
     queries,
   });
   return worksCategoryList;
-}
+};
 
 export const getCategoryDetail = async (
   contentId: string,
