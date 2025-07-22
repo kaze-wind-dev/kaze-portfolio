@@ -6,6 +6,7 @@ import WorksCard from "@/components/ui/Card/WorksCard";
 import CardsContainer from "@/components/ui/CardsContainer";
 import CategoryFilter from "@/components/ui/CategoryFilter";
 import Pagination from "@/components/ui/Pagination";
+import WorksListLayout from "@/components/layout/WorksLayout/WorksListLayout";
 import styles from "../../page.module.scss";
 
 type Props = {
@@ -29,7 +30,7 @@ export default async function WorksListPage({ params }: Props) {
   const { contents: categories } = await getWorksCategoryList();
 
   return (
-    <>
+    <WorksListLayout>
       <Breadcrumbs items={[{ name: "Works" }]} />
       <div className="l-container">
         <div className={`${styles["p-works"]}`}>
@@ -56,6 +57,6 @@ export default async function WorksListPage({ params }: Props) {
           </div>
         </div>
       </div>
-    </>
+    </WorksListLayout>
   );
 }

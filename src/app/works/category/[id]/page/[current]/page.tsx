@@ -10,6 +10,7 @@ import WorksCard from "@/components/ui/Card/WorksCard";
 import CardsContainer from "@/components/ui/CardsContainer";
 import CategoryFilter from "@/components/ui/CategoryFilter";
 import Pagination from "@/components/ui/Pagination";
+import WorksListLayout from "@/components/layout/WorksLayout/WorksListLayout";
 import styles from "../../../../page.module.scss";
 type Props = {
   params: {
@@ -36,12 +37,9 @@ export default async function WorkListPage({ params }: Props) {
   const category = await getCategoryDetail(id).catch(notFound);
 
   return (
-    <>
+    <WorksListLayout>
       <Breadcrumbs
-        items={[
-          { name: "Works", href: "/works" },
-          { name: category.name }
-        ]}
+        items={[{ name: "Works", href: "/works" }, { name: category.name }]}
       />
 
       <div className="l-container">
@@ -52,27 +50,26 @@ export default async function WorkListPage({ params }: Props) {
               basePath="works"
               currentId={id}
             />
-             {works.length === 0 ? (
+            {works.length === 0 ? (
               <p className="nopost-message">現在投稿はございません。</p>
             ) : (
               <>
-               <CardsContainer>
-              {works.map((article) => (
-                <WorksCard works={article} key={article.id} />
-              ))}
-            </CardsContainer>
-            <Pagination
-              totalCount={totalCount}
-              perpage={WORKS_LIST_LIMIT}
-              basePath={`works/category/${id}`}
-              current={current}
-            />
+                <CardsContainer>
+                  {works.map((article) => (
+                    <WorksCard works={article} key={article.id} />
+                  ))}
+                </CardsContainer>
+                <Pagination
+                  totalCount={totalCount}
+                  perpage={WORKS_LIST_LIMIT}
+                  basePath={`works/category/${id}`}
+                  current={current}
+                />
               </>
             )}
-            
           </div>
         </div>
       </div>
-    </>
+    </WorksListLayout>
   );
 }
