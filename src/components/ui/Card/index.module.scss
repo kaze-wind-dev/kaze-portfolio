@@ -3,7 +3,7 @@
    ----------------------------------------------------------------- */
 .c-card {
   width: 100%;
-  
+
   &__header {
     width: 100%;
     position: relative;
@@ -43,6 +43,16 @@
       height: 100%;
       display: block;
     }
+  }
+  &__emoji {
+    aspect-ratio: 1/1;
+    width: 100%;
+    margin-bottom: var(--spacing-3);
+    border-radius: 8px;
+    text-align: center;
+    place-content: center;
+    font-size: var(--text-8xl);
+    background: linear-gradient(135deg, var(--gradation-primary));
   }
   &__body {
     width: 100%;
@@ -85,5 +95,21 @@
     @include mixin.mq("md") {
       margin-top: var(--spacing-4);
     }
+  }
+  &__zenn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    &-logo {
+      width: 56px;
+      height: auto;
+      display: block;
+    }
+  }
+  &__liked-count{
+    color: var(--color-neutral-500);
+    display: flex;
+    align-items: center;
+    gap: 4px;
   }
 }
