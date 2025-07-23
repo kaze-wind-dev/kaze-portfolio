@@ -33,6 +33,7 @@
   @each $key, $property in $fontWeight {
     --font-weight-#{$key}: #{$property};
   }
+  --gradation-primary: #E8F4FF, #73C2FB;
 }
 
 
