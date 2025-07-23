@@ -1,0 +1,6 @@
+@use "@/styles/foundation/mixin" as mixin;
+/* Articles
+   ----------------------------------------------------------------- */
+.p-articles {
+    padding-block: var(--spacing-15)  var(--spacing-30) ;
+}
