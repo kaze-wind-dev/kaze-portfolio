@@ -1,6 +1,11 @@
+
+export interface ZennUserName {
+  username: string;
+}
+
 export interface ZennUser {
   id: number;
-  username: string;
+  username: ZennUser;
   name: string;
   avatar_small_url: string;
 }
