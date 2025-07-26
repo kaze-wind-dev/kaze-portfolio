@@ -62,7 +62,7 @@
     font-weight: var(--font-weight-700);
     letter-spacing: var(--tracking-base);
     font-size: var(--text-md);
-    @include mixin.lineClamp(1);
+    @include mixin.lineClamp(2);
 
     @include mixin.mq("md") {
       font-size: var(--text-lg);
