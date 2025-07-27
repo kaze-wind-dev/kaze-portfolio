@@ -13,8 +13,6 @@ export function sortArticles({
   order = "desc",
   searchQuery,
 }: ZennSortArticlesProps) {
-  console.log(articles);
-
   const filteredArticles = searchQuery
     ? [...articles].filter((articles) =>
         articles.title.toLowerCase().includes(searchQuery.toLowerCase())
