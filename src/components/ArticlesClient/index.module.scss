@@ -1,0 +1,40 @@
+@use "@/styles/foundation/mixin" as mixin;
+
+/* ArticlesClient
+   ----------------------------------------------------------------- */
+.c-articles__filter {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: var(--spacing-3) var(--spacing-4);
+  margin-bottom: var(--spacing-8);
+  @include mixin.mq("sm") {
+    margin-bottom: var(--spacing-10);
+    flex-wrap: nowrap;
+  }
+  @include mixin.mq("md") {
+    margin-bottom: var(--spacing-12);
+  }
+  @include mixin.mq("lg") {
+    margin-bottom: var(--spacing-14);
+  }
+  @include mixin.mq("md") {
+    gap: var(--spacing-5);
+  }
+  &-search {
+    
+    width: 100%;
+    flex-shrink: 1;
+    @include mixin.mq("lg") {
+      width: 50%;
+    }
+  }
+  &-sort {
+    flex-shrink: 0;
+    margin-left: auto;
+    @include mixin.mq("sm") {
+      margin-left: unset;
+    }
+  }
+}
