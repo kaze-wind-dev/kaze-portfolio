@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import ArticleCard from "@/components/ui/Card/ArticleCard";
 import CardsContainer from "@/components/ui/CardsContainer";
@@ -17,6 +17,22 @@ type Props = {
   initialSearchQuery: string;
 };
 
+type SelectAreaOption = {
+  label: string;
+  value: SortKey;
+};
+
+const selectAreaOptions: SelectAreaOption[] = [
+  {
+    label: "投稿順",
+    value: "published_at",
+  },
+  {
+    label: "いいね数",
+    value: "liked_count",
+  },
+];
+
 export default function ArticlesClient({
   initialArticles,
   initialSortKey,
@@ -26,9 +42,29 @@ export default function ArticlesClient({
   const searchParams = useSearchParams();
   const router = useRouter();
 
+  const sortSelectAreaRef = useRef<HTMLDivElement>(null);
   const [sortKey, setSortKey] = useState<SortKey>(initialSortKey);
   const [order, setOrder] = useState<Order>(initialOrder);
   const [searchQuery, setSearchQuery] = useState<string>(initialSearchQuery);
+  const [isSelectAreaOpen, setIsSelectAreaOpen] = useState<boolean>(false);
+
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (
+        sortSelectAreaRef.current &&
+        !sortSelectAreaRef.current.contains(e.target as Element)
+      ) {
+        setIsSelectAreaOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside as EventListener);
+    return () => {
+      document.removeEventListener(
+        "mousedown",
+        handleClickOutside as EventListener
+      );
+    };
+  }, []);
 
   const updateURL = (
     newSortKey: SortKey,
@@ -46,9 +82,10 @@ export default function ArticlesClient({
     router.push(`?${params.toString()}`, { scroll: false });
   };
 
-  const handleSort = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const newSortKey = e.target.value as SortKey;
+  const handleSort = (value: SortKey) => {
+    const newSortKey = value;
     setSortKey(newSortKey);
+    setIsSelectAreaOpen(false);
     updateURL(newSortKey, order, searchQuery);
   };
 
@@ -56,6 +93,10 @@ export default function ArticlesClient({
     const newOrder = order === "desc" ? "asc" : "desc";
     setOrder(newOrder);
     updateURL(sortKey, newOrder, searchQuery);
+  };
+  const handleSelectArea = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setIsSelectAreaOpen(!isSelectAreaOpen);
   };
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -74,7 +115,7 @@ export default function ArticlesClient({
   return (
     <>
       <div>
-        <div className="search">
+        <div className="search-area">
           <label htmlFor="search" className="sr-only">
             タイトル検索
           </label>
@@ -83,27 +124,33 @@ export default function ArticlesClient({
             onChange={handleSearch}
             placeholder="タイトル検索"
             defaultValue={searchParams.get("searchQuery")?.toString()}
+            id="search"
           />
         </div>
         <div className="sort">
-          <div className="sort-select">
-            <label className="sort-select__label" htmlFor="sort-select__area">
-              並び順
-            </label>
-            <select
-              className="sort-select__area"
-              name="sort-select__area"
-              onChange={handleSort}
-              value={sortKey}
-              id="sort-select__area"
-            >
-              <option className="sort-select__option" value="published_at">
-                投稿日
-              </option>
-              <option className="sort-select__option" value="liked_count">
-                いいね数
-              </option>
-            </select>
+          <div className="sort-select" onClick={handleSelectArea}>
+            <div className="sort-select__label">並び順</div>
+            <div className="sort-select__area" ref={sortSelectAreaRef}>
+              <button
+                className="sort-select__area-close"
+                onClick={handleSelectArea}
+              >
+                ×
+              </button>
+              {selectAreaOptions.map((options) => {
+                return (
+                  <div
+                    className="sort-select__item"
+                    key={options.value}
+                    onClick={() => {
+                      handleSort(options.value);
+                    }}
+                  >
+                    {options.label}
+                  </div>
+                );
+              })}
+            </div>
           </div>
           <button
             className="sort__order-button"
@@ -118,7 +165,7 @@ export default function ArticlesClient({
       </div>
 
       <CardsContainer>
-        {sortedData.length !== 0  ? (
+        {sortedData.length !== 0 ? (
           sortedData.map((article: ZennArticle) => (
             <ArticleCard article={article} key={article.id} />
           ))
