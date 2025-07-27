@@ -33,7 +33,6 @@ export default function ArticlesClient({
   const [order, setOrder] = useState<Order>(initialOrder);
   const [searchQuery, setSearchQuery] = useState<string>(initialSearchQuery);
   const [isSelectAreaOpen, setIsSelectAreaOpen] = useState<boolean>(false);
-  console.log(isSelectAreaOpen);
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       if (
