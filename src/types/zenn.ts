@@ -37,3 +37,6 @@ export interface ZennArticleList {
   next_page: string | null;
   total_count: string | null;
 }
+
+export type SortKey = keyof ZennArticle;
+export type Order = "desc" | "asc";
