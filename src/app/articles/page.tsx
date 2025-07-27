@@ -1,5 +1,5 @@
 import { Breadcrumbs } from "@/components/ui/BreadCrumb";
-import ArticlesClient from "@/components/ui/ArticlesClient";
+import ArticlesClient from "@/components/ArticlesClient";
 import { getZennArticles } from "@/lib/api/zennFunctions";
 import styles from "./page.module.scss";
 import { ZennArticle } from "@/types/zenn";
