@@ -33,24 +33,32 @@ export default async function AboutPage() {
         <section className={`${styles["p-profile"]}`}>
           <div className="inner">
             <div className={`${styles["p-profile__container"]}`}>
-              <h2 className={`${styles["p-profile__name"]}`}>
-                Kaze <span>かぜ</span>
-              </h2>
-              <p className={`${styles["p-profile__position"]}`}>コーダー</p>
-              <p className={`${styles["p-profile__text"]}`}>
-                はじめまして。
-                <br />
-                東京都内でコーダーをしている、Kaze（かぜ）といいます。
-              </p>
-              <div className={`${styles["p-profile__box"]}`}>
-                <Image
-                  src="/images/no_image.jpg"
-                  alt="noimage"
-                  width={160}
-                  height={160}
-                  className={`${styles["p-profile__image"]}`}
-                />
-                <IconList />
+              <div className={`${styles["p-profile__left"]}`}>
+                <hgroup className={`${styles["p-profile__name"]}`}>
+                  <h2 className={`${styles["p-profile__name-en"]}`}>Kaze</h2>
+                  <span className={`${styles["p-profile__name-ja"]}`}>かぜ</span>
+                </hgroup>
+                <p className={`${styles["p-profile__position"]}`}>コーダー</p>
+                <p className={`${styles["p-profile__text"]}`}>
+                  はじめまして。
+                  <br />
+                  東京都内でコーダーをしている、Kaze（かぜ）といいます。
+                </p>
+              </div>
+              <div className={`${styles["p-profile__right"]}`}>
+                <div className={`${styles["p-profile__box"]}`}>
+                  <div  className={`${styles["p-profile__image"]}`}>
+
+                  <Image
+                    src="/images/no_image.jpg"
+                    alt="noimage"
+                    width={160}
+                    height={160}
+                   
+                  />
+                  </div>
+                  <IconList />
+                </div>
               </div>
             </div>
           </div>
@@ -118,7 +126,7 @@ export default async function AboutPage() {
                 </li>
                 <li className={`${styles["p-experience__list-item"]}`}>
                   <p className={`${styles["p-experience__list-item__year"]}`}>
-                   2020年4月
+                    2020年4月
                   </p>
                   <p
                     className={`${styles["p-experience__list-item__content"]}`}
@@ -133,7 +141,9 @@ export default async function AboutPage() {
                   <p
                     className={`${styles["p-experience__list-item__content"]}`}
                   >
-                    現在の会社へ就職。<br/>コーダーとして従事する。
+                    現在の会社へ就職。
+                    <br />
+                    コーダーとして従事する。
                   </p>
                 </li>
               </ul>
