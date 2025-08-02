@@ -1,0 +1,77 @@
+@use "@/styles/foundation/mixin" as mixin;
+/* Top
+   ----------------------------------------------------------------- */
+
+.p-topHero {
+  background: linear-gradient(45deg, var(--gradation-primary));
+  padding-block: 64px;
+  @include mixin.mq("sm") {
+    padding-block: 80px;
+  }
+  @include mixin.mq("md") {
+    padding-block: 100px;
+  }
+  @include mixin.mq("lg") {
+    padding-block: 160px;
+  }
+  &__inner {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+  }
+  &__heading {
+    order: 2;
+    font-weight: var(--font-weight-700);
+    text-align: center;
+    letter-spacing: var(--tracking-base);
+    line-height: var(--leading-lg);
+    font-size: var(--text-base);
+    @include mixin.mq("md") {
+      font-size: var(--text-md);
+    }
+    @include mixin.mq("lg") {
+      font-size: var(--text-lg);
+    }
+  }
+  &__logo {
+    order: 1;
+    max-width: 320px;
+    width: 100%;
+    margin-bottom: var(--spacing-8);
+    >svg{
+        width: 100%;
+    height: auto;
+    }
+    @include mixin.mq("md") {
+      width: 480px;
+      margin-bottom: var(--spacing-10);
+    }
+    @include mixin.mq("lg") {
+      width: 581px;
+      margin-bottom: var(--spacing-12);
+    }
+  }
+  &__links {
+    order: 3;
+    margin-top: var(--spacing-10);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    gap: var(--spacing-4);
+    width: 100%;
+
+    @include mixin.mq("md") {
+      margin-top: var(--spacing-14);
+      gap: var(--spacing-5);
+    }
+    @include mixin.mq("lg") {
+      margin-top: var(--spacing-16);
+      gap: var(--spacing-8);
+    }
+  }
+  &__btn {
+    max-width: 320px;
+    width: 100%;
+  }
+}
