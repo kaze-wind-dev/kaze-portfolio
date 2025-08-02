@@ -1,7 +1,6 @@
 @use "@/styles/foundation/mixin" as mixin;
-/* Top
+/* topHero
    ----------------------------------------------------------------- */
-
 .p-topHero {
   background: linear-gradient(45deg, var(--gradation-primary));
   padding-block: 64px;
@@ -35,12 +34,11 @@
   }
   &__logo {
     order: 1;
-    max-width: 320px;
-    width: 100%;
+    width: min(100%, 320px);
     margin-bottom: var(--spacing-8);
-    >svg{
-        width: 100%;
-    height: auto;
+    > svg {
+      width: 100%;
+      height: auto;
     }
     @include mixin.mq("md") {
       width: 480px;
@@ -73,5 +71,81 @@
   &__btn {
     max-width: 320px;
     width: 100%;
+  }
+}
+
+/* topAbout
+   ----------------------------------------------------------------- */
+.p-topAbout {
+  margin-top: var(--spacing-15);
+  padding-block: var(--spacing-15);
+  &__inner {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-template-areas:
+      "title"
+      "image"
+      "text-area"
+      "button";
+    grid-template-columns: 1fr;
+    @include mixin.mq("md") {
+      grid-template-areas:
+        "image title"
+        "image text-area"
+        "image button";
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  &__title {
+    grid-area: title;
+    @include mixin.mq("md") {
+      justify-self: self-start;
+    }
+  }
+  &__text-area {
+    grid-area: text-area;
+    @include mixin.mq("md") {
+      justify-self: self-start;
+    }
+  }
+  &__text {
+    line-height: var(--leading-lg);
+
+    &:not(:nth-last-of-type(1)) {
+      margin-bottom: 1em;
+    }
+    @include mixin.mq("md") {
+      &:not(:nth-last-of-type(1)) {
+        margin-bottom: 2em;
+      }
+    }
+  }
+  &__button {
+    margin-top: var(--spacing-8);
+    grid-area: button;
+    @include mixin.mq("md") {
+      justify-self: self-start;
+      margin-top: var(--spacing-10);
+    }
+    @include mixin.mq("lg") {
+      margin-top: var(--spacing-14);
+    }
+  }
+  &__image {
+    grid-area: image;
+
+    background-color: var(--color-neutral-300);
+    aspect-ratio: 1 / 1;
+    width: min(300px, 64%);
+    margin-bottom: var(--spacing-6);
+    @include mixin.mq("md") {
+      margin-bottom: 0;
+    }
+    > img {
+      object-fit: cover;
+      object-position: center;
+      border-radius: 8px;
+    }
   }
 }
