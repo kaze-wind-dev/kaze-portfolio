@@ -68,7 +68,7 @@
       gap: var(--spacing-8);
     }
   }
-  &__btn {
+  &__button {
     max-width: 320px;
     width: 100%;
   }
@@ -77,8 +77,13 @@
 /* topAbout
    ----------------------------------------------------------------- */
 .p-topAbout {
-  margin-top: var(--spacing-15);
-  padding-block: var(--spacing-15);
+  margin-top: var(--spacing-12);
+  padding-block: var(--spacing-12);
+
+  @include mixin.mq("lg") {
+    margin-top: var(--spacing-15);
+    padding-block: var(--spacing-15);
+  }
   &__inner {
     display: grid;
     align-items: center;
@@ -146,6 +151,42 @@
       object-fit: cover;
       object-position: center;
       border-radius: 8px;
+    }
+  }
+}
+
+/* topCta
+   ----------------------------------------------------------------- */
+.p-topCta {
+  // margin-top: var(--spacing-24);
+  padding-block: var(--spacing-24);
+  background-color: var(--color-accent-lightness);
+
+  @include mixin.mq("lg") {
+    margin-top: var(--spacing-30);
+    padding-block: var(--spacing-30);
+  }
+  &__text {
+    font-weight: var(--font-weight-700);
+    text-align: center;
+    letter-spacing: var(--tracking-base);
+    line-height: var(--leading-lg);
+    font-size: var(--text-base);
+    @include mixin.mq("md") {
+      font-size: var(--text-md);
+    }
+    @include mixin.mq("lg") {
+      font-size: var(--text-lg);
+    }
+  }
+  &__button {
+    margin-top: var(--spacing-8);
+
+    @include mixin.mq("md") {
+      margin-top: var(--spacing-10);
+    }
+    @include mixin.mq("lg") {
+      margin-top: var(--spacing-14);
     }
   }
 }
