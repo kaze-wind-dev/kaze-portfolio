@@ -36,7 +36,10 @@
   --gradation-primary: #E8F4FF, #73C2FB;
 }
 
-
+html{
+  scroll-behavior: smooth;
+  scroll-padding-top: 96px;
+}
 
 body {
   background-color: var(--color-white);
