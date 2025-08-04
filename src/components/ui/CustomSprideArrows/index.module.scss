@@ -1,0 +1,27 @@
+@use "@/styles/foundation/mixin" as mixin;
+/* Custom Splide Arrow
+   ----------------------------------------------------------------- */
+.c-customSplide-arrows {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-4);
+}
+.c-customSplide-arrow {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 8px;
+  border: 2px solid var(--color-primary);
+  display: grid;
+  place-content: center;
+  color: var(--color-primary);
+  transition: background-color 0.3s, border-color 0.3s;
+  &:hover {
+    background-color: var(--color-accent-lightness);
+    border-color: var(--color-accent-darken);
+  }
+  &__icon {
+    width: 1.5rem;
+    height: auto;
+  }
+}
