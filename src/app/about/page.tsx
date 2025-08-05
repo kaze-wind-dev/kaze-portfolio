@@ -63,7 +63,7 @@ export default async function AboutPage() {
             </div>
           </div>
         </section>
-        <section className={`${styles["p-skills"]}`}>
+        <section className={`${styles["p-skills"]}`} id="skills">
           <div className="inner">
             <div className={`${styles["p-skills__container"]}`}>
               <SectionTitle

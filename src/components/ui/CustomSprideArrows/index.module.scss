@@ -5,23 +5,34 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: var(--spacing-4);
+  width: fit-content;
+  gap: var(--spacing-3);
+  @include mixin.mq("lg") {
+    gap: var(--spacing-4);
+  }
 }
 .c-customSplide-arrow {
-  width: 4rem;
-  height: 4rem;
   border-radius: 8px;
   border: 2px solid var(--color-primary);
   display: grid;
   place-content: center;
   color: var(--color-primary);
   transition: background-color 0.3s, border-color 0.3s;
+  width: 3rem;
+  height: 3rem;
+  @include mixin.mq("lg") {
+    width: 4rem;
+    height: 4rem;
+  }
   &:hover {
     background-color: var(--color-accent-lightness);
     border-color: var(--color-accent-darken);
   }
   &__icon {
-    width: 1.5rem;
+    width: 1.2rem;
     height: auto;
+    @include mixin.mq("lg") {
+      width: 1.5rem;
+    }
   }
 }

@@ -1,0 +1,80 @@
+@use "@/styles/foundation/mixin" as mixin;
+
+/* TopWorks
+   ----------------------------------------------------------------- */
+.p-topWorks {
+  margin-top: var(--spacing-24);
+  padding-left: max(5%, calc(50% - 640px));
+  @include mixin.mq("lg") {
+    margin-top: var(--spacing-30);
+  }
+  &__title {
+    grid-area: title;
+    margin-bottom: 0;
+
+    @include mixin.mq("lg") {
+      margin-bottom: 200px;
+    }
+  }
+  &__header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding-right: 5%;
+    margin-bottom: var(--spacing-10);
+    @include mixin.mq("md") {
+      margin-bottom: var(--spacing-12);
+    }
+    @include mixin.mq("lg") {
+      display: block;
+      width: 300px;
+      flex-shrink: 0;
+      padding-right: 0;
+    }
+  }
+  &__slider-arrows {
+    grid-area: arrow;
+    margin-top: var(--spacing-3);
+    @include mixin.mq("lg") {
+      margin-top: 0;
+    }
+  }
+  &__inner {
+    @include mixin.mq("lg") {
+      display: flex;
+      gap: 0 40px;
+    }
+  }
+  &__actions {
+    width: 108px;
+    @include mixin.mq("lg") {
+      width: 144px;
+    }
+  }
+  &__moreLink {
+    font-weight: var(--font-weight-700);
+    color: var(--color-primary);
+    border-bottom: 2px solid var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 0.75em;
+    grid-area: link;
+
+    @include mixin.mq("lg") {
+      margin-bottom: var(--spacing-6);
+    }
+    &-arrow {
+      height: auto;
+      display: block;
+      @include mixin.mq("lg") {
+        width: 24px;
+      }
+    }
+    &:hover {
+      opacity: 1;
+      color: var(--color-accent-darken);
+      border-color: var(--color-accent-darken);
+    }
+  }
+}
