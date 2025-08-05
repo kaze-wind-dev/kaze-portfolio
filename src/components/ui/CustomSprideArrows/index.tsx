@@ -5,9 +5,10 @@ import styles from "./index.module.scss";
 
 type Props = {
   splideRef: React.RefObject<{ go: (direction: string) => void } | null>;
+  className?: string;
 };
 
-const CustomSplideArrows = ({ splideRef }: Props) => {
+const CustomSplideArrows = ({ splideRef,className }: Props) => {
   const handlePrev = () => {
     splideRef.current?.go("-1");
   };
@@ -15,7 +16,7 @@ const CustomSplideArrows = ({ splideRef }: Props) => {
     splideRef.current?.go("+1");
   };
   return (
-    <div className={styles["c-customSplide-arrows"]}>
+    <div className={`${styles["c-customSplide-arrows"]} ${className || ''}`}>
       <button
         className={`${styles["c-customSplide-arrow"]} ${styles["c-customSplide-arrow--prev"]}`}
         onClick={handlePrev}
