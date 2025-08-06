@@ -1,0 +1,9 @@
+@use "@/styles/foundation/mixin" as mixin;
+/* Contact
+   ----------------------------------------------------------------- */
+.p-contact {
+ padding-block: var(--spacing-24);
+ @include mixin.mq("lg") {
+    padding-block: var(--spacing-30);
+  }
+}
