@@ -1,0 +1,97 @@
+@use "@/styles/foundation/mixin" as mixin;
+/* Form
+   ----------------------------------------------------------------- */
+.c-form {
+  max-width: 960px;
+  width: 100%;
+  margin-inline: auto;
+  &__item {
+    padding-block: var(--spacing-5);
+
+    border-bottom: 1px solid var(--color-neutral-300);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-5);
+    @include mixin.mq("lg") {
+      padding-block: var(--spacing-6);
+    }
+  }
+  &__label {
+    flex-shrink: 1;
+    width: 100%;
+    font-weight: var(--font-weight-700);
+  }
+  &__require {
+    background-color: #f46d6d;
+    color: var(--color-white);
+    border-radius: 4px;
+    font-size: var(--text-sm);
+    padding: var(--spacing-1) var(--spacing-3);
+    display: inline-block;
+    text-align: center;
+    flex-shrink: 0;
+  }
+  &__textarea,
+  &__textfield {
+    width: 640px;
+    flex-shrink: 0;
+    padding: var(--spacing-3);
+    border: 1px solid var(--color-neutral-300);
+    outline: none;
+    transition: 0.3s;
+    border-radius: 4px;
+    &:focus {
+      border-color: var(--color-primary);
+    }
+  }
+  &__textarea {
+    resize: none;
+    height: 200px;
+  }
+  &__actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: var(--spacing-10);
+    @include mixin.mq("md") {
+      margin-top: var(--spacing-12);
+    }
+    @include mixin.mq("lg") {
+      margin-top: var(--spacing-14);
+    }
+  }
+  &__submit-button {
+    border-radius: 4px;
+    text-align: center;
+    padding: 16px 16px;
+    display: block;
+    max-width: 320px;
+    width: 100%;
+    @include mixin.setFont($weight: var(--font-weight-700));
+    @include mixin.mq("md") {
+      padding: 18px 20px;
+    }
+    @include mixin.mq("lg") {
+      padding: 20px 24px;
+    }
+    box-shadow: 0 0 6px rgb(var(--color-black-rgb) / 0.1);
+    background-color: var(--color-primary);
+    transition: background-color 0.3s, box-shadow 0.3s;
+    color: var(--color-white);
+    @include mixin.mq("lg") {
+      box-shadow: 0 0 8px rgb(var(--color-black-rgb) / 0.1);
+    }
+    &:hover {
+      background-color: var(--color-accent-darken);
+      box-shadow: 0 0 10px rgb(var(--color-black-rgb) / 0.2);
+      opacity: 1;
+      @include mixin.mq("lg") {
+        box-shadow: 0 0 12px rgb(var(--color-black-rgb) / 0.2);
+      }
+    }
+    &:disabled{
+      background-color: var(--color-neutral-300);
+      pointer-events: none;
+    }
+  }
+}
