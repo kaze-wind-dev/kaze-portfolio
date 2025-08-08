@@ -16,6 +16,8 @@ export default function AboutLayout({
       hero={{
         heading: "Contact",
         subTitle: "お問い合わせ",
+        pageDescription:"ご意見やご感想、気なることなどございましたら、以下のフォームよりお問い合わせください。"
+        
       }}
     >
       {children}
