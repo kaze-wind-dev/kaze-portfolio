@@ -1,0 +1,28 @@
+@use "@/styles/foundation/mixin" as mixin;
+/* Notfound
+   ----------------------------------------------------------------- */
+.p-notfound {
+  padding-block: 0  var(--spacing-24) ;
+  @include mixin.mq("lg") {
+    padding-block: 0  var(--spacing-30) ;
+    }
+  &__links {
+    
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: var(--spacing-4);
+    width: 100%;
+
+    @include mixin.mq("md") {
+      gap: var(--spacing-5);
+    }
+    @include mixin.mq("lg") {
+      gap: var(--spacing-8);
+    }
+  }
+  &__button {
+    max-width: 320px;
+    width: 100%;
+  }
+}
