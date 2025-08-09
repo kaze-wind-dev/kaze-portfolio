@@ -1,3 +1,5 @@
+import Link from "next/link";
+import { TiHome } from "react-icons/ti";
 import { Metadata } from "next";
 import { Breadcrumbs } from "@/components/ui/BreadCrumb";
 import Button from "@/components/ui/Button";
@@ -24,7 +26,23 @@ export default function Home() {
         ),
       }}
     >
-      <Breadcrumbs items={[{ name: "Not Found" }]} />
+      <nav
+        className={`l-breadcrumb ${styles["c-breadcrumb"]}`}
+        aria-label="パンくずリスト"
+      >
+        <ul className={`${styles["c-breadcrumb__list"]}`}>
+          <li className={`${styles["c-breadcrumb__item"]}`}>
+            <Link
+              href="/"
+              className={`${styles["c-breadcrumb__link"]} ${styles["c-breadcrumb__link--home"]}`}
+            >
+              <TiHome className={`${styles["c-breadcrumb__home-icon"]}`} />
+              Top
+            </Link>
+          </li>
+          <li className={`${styles["c-breadcrumb__item"]}`}>Not Found</li>
+        </ul>
+      </nav>
       <div className="l-container">
         <div className={`${styles["p-notfound"]}`}>
           <div className="inner">
