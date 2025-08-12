@@ -3,7 +3,7 @@ import PageLayout from "@/components/layout/PageLayout";
 
 export const metadata: Metadata = {
   title: "About",
-  description: "コーダーとして4年間、200件以上のWebサイト構築に携わってきました。HTML/CSS/SCSS/PHPでの確実な実装を得意とし、現在はNext.js/React/TypeScriptを学習してフロントエンドエンジニアへのキャリアチェンジを目指しています。",
+  description: "コーダーとして3年間、200件以上のWebサイト構築に携わってきました。HTML/CSS/SCSS/PHPでの確実な実装を得意とし、現在はNext.js/React/TypeScriptを学習してフロントエンドエンジニアへのキャリアチェンジを目指しています。",
 };
 
 export default function AboutLayout({
