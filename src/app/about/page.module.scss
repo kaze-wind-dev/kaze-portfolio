@@ -158,6 +158,7 @@
     }
     &-text {
       line-height: var(--leading-lg);
+        white-space: pre-wrap;
     }
     &:not(:last-child) {
       margin-bottom: var(--spacing-6);
