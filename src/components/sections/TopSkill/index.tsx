@@ -129,7 +129,7 @@ const TopSkill = () => {
         heading={<>Skill</>}
         text={<>スキル概要</>}
       />
-      <div className={styles["p-topSkill__text-area"]}>
+      <div>
         <p className={styles["p-topSkill__text"]}>
           HTML・Sass・PHP・自社CMSを使用してサイト制作を行っています。
           <br />
