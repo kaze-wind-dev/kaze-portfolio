@@ -13,23 +13,23 @@ import Pagination from "@/components/ui/Pagination";
 import WorksListLayout from "@/components/layout/WorksLayout/WorksListLayout";
 import styles from "../../../../page.module.scss";
 type Props = {
-  params: {
+  params: Promise<{
     id: string;
     current: string;
-  };
+  }>;
 };
 
 export default async function WorkListPage({ params }: Props) {
-  const id = params.id;
-  const current = parseInt(params.current as string, 10);
+  const {id, current} = await params;
+  const currentNum = parseInt(current as string, 10);
 
-  if (Number.isNaN(current) || current < 1) {
+  if (Number.isNaN(currentNum) || currentNum < 1) {
     notFound();
   }
 
   const { contents: works, totalCount } = await getWorksList({
     limit: WORKS_LIST_LIMIT,
-    offset: WORKS_LIST_LIMIT * (current - 1),
+    offset: WORKS_LIST_LIMIT * (currentNum - 1),
     filters: `category[equals]${id}`,
   });
   const { contents: categories } = await getWorksCategoryList();
@@ -63,7 +63,7 @@ export default async function WorkListPage({ params }: Props) {
                   totalCount={totalCount}
                   perpage={WORKS_LIST_LIMIT}
                   basePath={`works/category/${id}`}
-                  current={current}
+                  current={currentNum}
                 />
               </>
             )}

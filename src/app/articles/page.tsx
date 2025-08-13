@@ -5,11 +5,11 @@ import styles from "./page.module.scss";
 import { ZennArticle } from "@/types/zenn";
 
 type Props = {
-  searchParams: {
+  searchParams: Promise<{
     sort?: string;
     order?: string;
     searchQuery?: string;
-  };
+  }>;
 };
 
 export default async function ArticlesListPage({ searchParams }: Props) {

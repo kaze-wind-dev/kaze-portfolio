@@ -10,21 +10,22 @@ import WorksListLayout from "@/components/layout/WorksLayout/WorksListLayout";
 import styles from "../../page.module.scss";
 
 type Props = {
-  params: {
+  params: Promise<{
     current: string;
-  };
+  }>;
 };
 
 export default async function WorksListPage({ params }: Props) {
-  const current = parseInt(params.current as string, 10);
+  const {current} = await params;
+  const currentNum = parseInt(current as string, 10);
 
-  if (Number.isNaN(current) || current < 1) {
+  if (Number.isNaN(currentNum) || currentNum < 1) {
     notFound();
   }
 
   const { contents: works, totalCount } = await getWorksList({
     limit: WORKS_LIST_LIMIT,
-    offset: WORKS_LIST_LIMIT * (current - 1),
+    offset: WORKS_LIST_LIMIT * (currentNum - 1),
   });
 
   const { contents: categories } = await getWorksCategoryList();
@@ -49,7 +50,7 @@ export default async function WorksListPage({ params }: Props) {
               totalCount={totalCount}
               perpage={WORKS_LIST_LIMIT}
               basePath="works"
-              current={current}
+              current={currentNum}
             />
               </>
             )}

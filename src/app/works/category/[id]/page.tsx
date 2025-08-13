@@ -14,13 +14,13 @@ import WorksListLayout from "@/components/layout/WorksLayout/WorksListLayout";
 import styles from "../../page.module.scss";
 
 type Props = {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 };
 
 export default async function WorkListPage({ params }: Props) {
-  const id = params.id;
+  const {id} = await params;
 
   const { contents: works, totalCount } = await getWorksList({
     limit: WORKS_LIST_LIMIT,

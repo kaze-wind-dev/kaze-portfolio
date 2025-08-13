@@ -11,9 +11,9 @@ import { Breadcrumbs } from "@/components/ui/BreadCrumb";
 import styles from "./index.module.scss";
 
 type Props = {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
