@@ -19,9 +19,9 @@ export default async function Home() {
       <section className={`${styles["p-topHero"]} `}>
         <div className={`${styles["p-topHero__inner"]} inner`}>
           <h1 className={`${styles["p-topHero__heading"]}`}>
-            紹介文を入れましょう紹介文を入れましょう紹介文を入れましょう紹介文を入れましょう
+            コーダーからフロントエンドエンジニアへ
             <br />
-            紹介文を入れましょう紹介文を入れましょう
+            3年間培った経験を活かし、次のステージを目指しています。
           </h1>
           <Logo className={`${styles["p-topHero__logo"]}`} />
           <div className={`${styles["p-topHero__links"]}`}>
@@ -42,12 +42,14 @@ export default async function Home() {
           />
           <div className={styles["p-topAbout__text-area"]}>
             <p className={styles["p-topAbout__text"]}>
-              「かぜ」という名前で...
+              東京都内でコーダーとして3年間従事。
               <br />
-              紹介文章が入ります紹介文章が入ります紹介文章が入ります
+              200件以上のWebサイト構築実績があります。
+              <br />
+              現在はReact/Next.jsを学習し、フロントエンドエンジニアへの転職を目指しています。
             </p>
             <p className={styles["p-topAbout__text"]}>
-              紹介文章が入ります紹介文章が入ります紹介文章が入ります紹介文章が入ります
+              フロントエンドエンジニアとして、より価値のあるWeb開発に挑戦したいと考えています。
             </p>
           </div>
           <Button className={styles["p-topAbout__button"]} href="/works">
@@ -61,7 +63,7 @@ export default async function Home() {
 
       <TopSkill />
       <TopWorks works={works} />
-      <TopArticles articles={zennArticlesData.articles}/>
+      <TopArticles articles={zennArticlesData.articles} />
 
       <section className={styles["p-topCta"]}>
         <div className={`${styles["p-topCta__inner"]} inner`}>
