@@ -32,7 +32,9 @@ export default async function Home() {
           </div>
         </div>
       </section>
-
+      <TopWorks works={works} />
+      <TopArticles articles={zennArticlesData.articles} />
+      <TopSkill />
       <section className={styles["p-topAbout"]}>
         <div className={`${styles["p-topAbout__inner"]} inner`}>
           <SectionTitle
@@ -66,11 +68,6 @@ export default async function Home() {
           </div>
         </div>
       </section>
-
-      <TopSkill />
-      <TopWorks works={works} />
-      <TopArticles articles={zennArticlesData.articles} />
-
       <section className={styles["p-topCta"]}>
         <div className={`${styles["p-topCta__inner"]} inner`}>
           <SectionTitle
