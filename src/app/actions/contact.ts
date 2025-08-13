@@ -48,6 +48,47 @@ export async function createFormData(state: formState, formData: FormData) {
       message: "お問い合わせ内容を入力してください",
     };
   }
+  const result = await fetch(
+    `https://api.hsforms.com/submissions/v3/integration/submit/${process.env.HUBSPOT_PORTAL_ID}/${process.env.HUBSPOT_FORM_ID}`,
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        fields: [
+          {
+            objectTypeId: "0-1",
+            name: "lastname",
+            value: rawFormData.lastName,
+          },
+          {
+            objectTypeId: "0-1",
+            name: "firstname",
+            value: rawFormData.firstName,
+          },
+          {
+            objectTypeId: "0-1",
+            name: "email",
+            value: rawFormData.email,
+          },
+          {
+            objectTypeId: "0-1",
+            name: "message",
+            value: rawFormData.message,
+          },
+        ],
+      }),
+    }
+  );
+  try{
+    await result.json();
+  }catch (e){
+    return {
+      status: "error",
+      message: "お問い合わせに失敗しました。",
+    };
+  }
   return {
     status: "success",
     message: "OK",
