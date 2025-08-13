@@ -53,7 +53,7 @@ const TopArticles = ({ articles }: Props) => {
             position="left"
           />
           <div className={`${styles["p-topArticles__actions"]}`}>
-            <Link href="/works" className={styles["p-topArticles__moreLink"]}>
+            <Link href="/articles" className={styles["p-topArticles__moreLink"]}>
               一覧を見る
               <HiOutlineArrowNarrowRight
                 className={styles["p-topArticles__moreLink-arrow"]}

@@ -131,12 +131,12 @@ const TopSkill = () => {
       />
       <div className={styles["p-topSkill__text-area"]}>
         <p className={styles["p-topSkill__text"]}>
-          HTML・Sass・PHP・自社CMSをメインにサイト制作を行っています。
+          HTML・Sass・PHP・自社CMSを使用してサイト制作を行っています。
           <br />
-          現在の会社へと就職後、およそ3年半で200以上ものサイト構築に携わりました。
+          現在の会社へ就職後、およそ3年半で200以上ものサイト構築に携わりました。
         </p>
         <p className={styles["p-topSkill__text"]}>
-          現在はフロントエンドエンジニアを目指して、React.jsやNext.jsなどモダン開発を学んでいます。
+          現在は、React.jsやNext.jsなどモダンフロント技術を学んでいます。
         </p>
       </div>
       <Splide
