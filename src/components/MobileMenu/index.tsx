@@ -56,17 +56,7 @@ const MobileMenu = () => {
                     </span>
                   </Link>
                 </li>
-                <li className={styles["c-mobile-menu__nav-item"]}>
-                  <Link
-                    className={styles["c-mobile-menu__nav-link"]}
-                    onClick={toggleMenu}
-                    href="/about"
-                  >
-                    <span className={styles["c-mobile-menu__nav-text"]}>
-                      About
-                    </span>
-                  </Link>
-                </li>
+
                 <li className={styles["c-mobile-menu__nav-item"]}>
                   <Link
                     className={styles["c-mobile-menu__nav-link"]}
@@ -89,7 +79,17 @@ const MobileMenu = () => {
                     </span>
                   </Link>
                 </li>
-
+                <li className={styles["c-mobile-menu__nav-item"]}>
+                  <Link
+                    className={styles["c-mobile-menu__nav-link"]}
+                    onClick={toggleMenu}
+                    href="/about"
+                  >
+                    <span className={styles["c-mobile-menu__nav-text"]}>
+                      About
+                    </span>
+                  </Link>
+                </li>
                 <li className={styles["c-mobile-menu__nav-item"]}>
                   <Link
                     className={styles["c-mobile-menu__nav-link"]}
@@ -125,7 +125,6 @@ const MobileMenu = () => {
                     </span>
                   </Link>
                 </li>
-                
               </ul>
             </nav>
             <div className={styles["c-mobile-menu__icon-list"]}>

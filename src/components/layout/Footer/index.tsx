@@ -13,11 +13,6 @@ const Footer = () => {
               </Link>
             </li>
             <li className="l-footer__nav-item">
-              <Link href="/about" className="l-footer__nav-link">
-                About
-              </Link>
-            </li>
-            <li className="l-footer__nav-item">
               <Link href="/works" className="l-footer__nav-link">
                 Works
               </Link>
@@ -25,6 +20,11 @@ const Footer = () => {
             <li className="l-footer__nav-item">
               <Link href="/articles" className="l-footer__nav-link">
                 Articles
+              </Link>
+            </li>
+            <li className="l-footer__nav-item">
+              <Link href="/about" className="l-footer__nav-link">
+                About
               </Link>
             </li>
             <li className="l-footer__nav-item">

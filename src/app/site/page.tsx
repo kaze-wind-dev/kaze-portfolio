@@ -12,9 +12,9 @@ type SiteMapContentList = SiteMapContent[];
 
 const sitemap = [
   { title: "Top", url: "/"},
-  { title: "About", url: "/about"},
   { title: "Works", url: "/works"},
   { title: "Articles", url: "/articles"},
+  { title: "About", url: "/about"},
   { title: "Contact", url: "/contact"},
   { title: "Site Map", url: "/site"},
   { title: "Privacy Policy", url: "/privacy"},
