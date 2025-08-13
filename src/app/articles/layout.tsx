@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import PageLayout from "@/components/layout/PageLayout";
 
+export const revalidate = 600;
+
 export const metadata: Metadata = {
   title: "Articles",
   description: "Zenn記事にて学んだことをまとめ、公開しています。",

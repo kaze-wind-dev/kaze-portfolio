@@ -9,6 +9,8 @@ import { getWorksList } from "@/lib/api/microcms";
 import { getZennArticles } from "@/lib/api/zennFunctions";
 import styles from "./page.module.scss";
 
+export const revalidate = 600;
+
 export default async function Home() {
   const { contents: works } = await getWorksList({
     limit: 6,

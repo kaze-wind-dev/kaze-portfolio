@@ -5,6 +5,8 @@ import Button from "@/components/ui/Button";
 import PageLayout from "@/components/layout/PageLayout";
 import styles from "./notfound.module.scss";
 
+export const revalidate = 86400;
+
 export const metadata: Metadata = {
   title: "404 Not Found",
   description: "お探しのページは見つかりません",

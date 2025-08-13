@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import PageLayout from "@/components/layout/PageLayout";
 
+export const revalidate = 86400;
+
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description: "Kaze Portfolioサイトのプライバシーポリシーページです",
