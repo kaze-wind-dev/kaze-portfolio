@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { TiHome } from "react-icons/ti";
 import { Metadata } from "next";
-import { Breadcrumbs } from "@/components/ui/BreadCrumb";
 import Button from "@/components/ui/Button";
 import PageLayout from "@/components/layout/PageLayout";
 import styles from "./notfound.module.scss";
