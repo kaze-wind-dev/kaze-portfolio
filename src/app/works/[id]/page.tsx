@@ -17,7 +17,8 @@ type Props = {
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const data = await getWorksDetail(params.id);
+  const {id} = await params;
+  const data = await getWorksDetail(id);
   if (!data) {
     notFound();
   }
@@ -40,7 +41,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function WorksDetailPage({ params }: Props) {
-  const data = await getWorksDetail(params.id);
+  const {id} = await params;
+  const data = await getWorksDetail(id);
 
   return (
     <main>
