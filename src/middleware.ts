@@ -5,6 +5,7 @@ export const config = {
 };
 
 export default function middleware(req: NextRequest) {
+    
   const basicAuth = req.headers.get("authorization");
 
   if (!process.env.BASIC_AUTH_ID || !process.env.BASIC_AUTH_PASSWORD) {
