@@ -37,6 +37,20 @@ const Footer = () => {
         <div className="l-footer__icon-list">
           <IconList />
         </div>
+        <nav className="l-footer__sub-nav">
+          <ul className="l-footer__sub-nav-list">
+            <li className="l-footer__sub-nav-item">
+              <Link href="/privacy" className="l-footer__sub-nav-link">
+                Privacy Policy
+              </Link>
+            </li>
+            <li className="l-footer__sub-nav-item">
+              <Link href="/site" className="l-footer__sub-nav-link">
+                Site Map
+              </Link>
+            </li>
+          </ul>
+        </nav>
         <div className="l-footer__copyright">
           <small>&copy; {new Date().getFullYear()} Kaze</small>
         </div>
