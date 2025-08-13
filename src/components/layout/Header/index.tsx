@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <header className="l-header" id="header">
       <div className="l-header__inner">
-        <Logo className="l-header__logo" />
+        <Logo className="l-header__logo" link={true}/>
         <div className="l-header__line">
           <nav className="l-header__nav">
             <ul className="l-header__nav-list">
