@@ -21,7 +21,7 @@
   &__label {
     flex-shrink: 1;
     font-weight: var(--font-weight-700);
-width: fit-content;
+    width: fit-content;
     @include mixin.mq("lg") {
       width: 100%;
     }
@@ -46,9 +46,8 @@ width: fit-content;
     outline: none;
     transition: 0.3s;
     border-radius: 4px;
-       @include mixin.mq("lg") {
-         width: 640px;
-
+    @include mixin.mq("lg") {
+      width: 640px;
     }
     &:focus {
       border-color: var(--color-primary);
@@ -77,6 +76,10 @@ width: fit-content;
     display: block;
     max-width: 320px;
     width: 100%;
+    box-shadow: 0 0 6px rgb(var(--color-black-rgb) / 0.1);
+    background-color: var(--color-primary);
+    transition: background-color 0.3s, box-shadow 0.3s;
+    color: var(--color-white);
     @include mixin.setFont($weight: var(--font-weight-700));
     @include mixin.mq("md") {
       padding: 18px 20px;
@@ -84,10 +87,6 @@ width: fit-content;
     @include mixin.mq("lg") {
       padding: 20px 24px;
     }
-    box-shadow: 0 0 6px rgb(var(--color-black-rgb) / 0.1);
-    background-color: var(--color-primary);
-    transition: background-color 0.3s, box-shadow 0.3s;
-    color: var(--color-white);
     @include mixin.mq("lg") {
       box-shadow: 0 0 8px rgb(var(--color-black-rgb) / 0.1);
     }
@@ -99,7 +98,7 @@ width: fit-content;
         box-shadow: 0 0 12px rgb(var(--color-black-rgb) / 0.2);
       }
     }
-    &:disabled{
+    &:disabled {
       background-color: var(--color-neutral-300);
       pointer-events: none;
     }

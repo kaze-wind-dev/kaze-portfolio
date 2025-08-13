@@ -4,11 +4,11 @@
    ----------------------------------------------------------------- */
 .p-topSkill {
   padding-block: 0 var(--spacing-24);
+  position: relative;
+  z-index: 1;
   @include mixin.mq("lg") {
     padding-block: 0 var(--spacing-30);
   }
-  position: relative;
-  z-index: 1;
   &::after {
     content: "";
     width: 100%;
@@ -24,9 +24,6 @@
     @include mixin.mq("lg") {
       height: 480px;
     }
-  }
-
-  &__text-area {
   }
   &__text {
     text-align: center;
