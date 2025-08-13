@@ -3,30 +3,28 @@
 /* TopSkill
    ----------------------------------------------------------------- */
 .p-topSkill {
-  //   margin-top: var(--spacing-12);
-  padding-block: var(--spacing-12) var(--spacing-24);
-    @include mixin.mq("lg") {
-    padding-block: var(--spacing-15) var(--spacing-30);
+  padding-block: 0 var(--spacing-24);
+  @include mixin.mq("lg") {
+    padding-block: 0 var(--spacing-30);
   }
   position: relative;
   z-index: 1;
   &::after {
-   content: '';
-   width: 100%;
-   background-color: var(--color-accent-lightness);
-   position: absolute;
-   bottom: 0;
-   z-index: -1;
-   left: 0;
-   height: 348px;
-   @include mixin.mq("md") {
-       height: 394px;
+    content: "";
+    width: 100%;
+    background-color: var(--color-accent-lightness);
+    position: absolute;
+    bottom: 0;
+    z-index: -1;
+    left: 0;
+    height: 348px;
+    @include mixin.mq("md") {
+      height: 394px;
     }
-   @include mixin.mq("lg") {
-       height: 480px;
+    @include mixin.mq("lg") {
+      height: 480px;
     }
   }
-
 
   &__text-area {
   }
@@ -44,7 +42,6 @@
     }
   }
   &__button {
-   //  margin-top: var(--spacing-8);
     margin-inline: auto;
     margin-top: var(--spacing-12);
     width: 90%;
@@ -56,16 +53,15 @@
     }
   }
   &__slider {
-     margin-top: var(--spacing-10);
-       @include mixin.mq("md") {
+    margin-top: var(--spacing-10);
+    @include mixin.mq("md") {
       margin-top: var(--spacing-14);
     }
-       @include mixin.mq("lg") {
+    @include mixin.mq("lg") {
       margin-top: var(--spacing-18);
     }
   }
   &__slider-slide {
-    // width: fit-content !important;
     display: grid;
     place-content: center;
     img {
@@ -73,7 +69,7 @@
       width: 100%;
     }
     &--html {
-       width: 82px * 0.6;
+      width: 82px * 0.6;
       @include mixin.mq("md") {
         width: 82px * 0.75;
       }
@@ -82,7 +78,7 @@
       }
     }
     &--css {
-       width: 71px * 0.6;
+      width: 71px * 0.6;
       @include mixin.mq("md") {
         width: 71px * 0.75;
       }
@@ -91,7 +87,7 @@
       }
     }
     &--sass {
-       width: 80px * 0.6;
+      width: 80px * 0.6;
       @include mixin.mq("md") {
         width: 80px * 0.75;
       }
@@ -100,7 +96,7 @@
       }
     }
     &--javascript {
-       width: 80px * 0.6;
+      width: 80px * 0.6;
       @include mixin.mq("md") {
         width: 80px * 0.75;
       }
@@ -109,7 +105,7 @@
       }
     }
     &--typescript {
-       width: 80px * 0.6;
+      width: 80px * 0.6;
       @include mixin.mq("md") {
         width: 80px * 0.75;
       }
@@ -118,7 +114,7 @@
       }
     }
     &--next {
-       width: 240px * 0.6;
+      width: 240px * 0.6;
       @include mixin.mq("md") {
         width: 240px * 0.75;
       }
@@ -127,7 +123,7 @@
       }
     }
     &--react {
-       width: 80px * 0.6;
+      width: 80px * 0.6;
       @include mixin.mq("md") {
         width: 80px * 0.75;
       }
@@ -136,7 +132,7 @@
       }
     }
     &--php {
-       width: 96px * 0.6;
+      width: 96px * 0.6;
       @include mixin.mq("md") {
         width: 96px * 0.75;
       }
@@ -145,7 +141,7 @@
       }
     }
     &--microcms {
-       width: 300px * 0.6;
+      width: 300px * 0.6;
       @include mixin.mq("md") {
         width: 300px * 0.75;
       }
@@ -154,7 +150,7 @@
       }
     }
     &--vercel {
-       width: 288px * 0.6;
+      width: 288px * 0.6;
       @include mixin.mq("md") {
         width: 288px * 0.75;
       }
@@ -163,7 +159,7 @@
       }
     }
     &--github {
-       width: 72px * 0.6;
+      width: 72px * 0.6;
       @include mixin.mq("md") {
         width: 72px * 0.75;
       }

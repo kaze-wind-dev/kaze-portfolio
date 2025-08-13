@@ -26,6 +26,7 @@
       margin-bottom: var(--spacing-12);
     }
     @include mixin.mq("lg") {
+      margin-bottom: 0;
       display: block;
       width: 300px;
       flex-shrink: 0;
