@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Logo from "@/components/ui/Logo";
 import IconList from "@/components/ui/IconList";
+import MobileMenu from "@/components/MobileMenu";
 
 const Header = () => {
   return (
@@ -31,6 +32,7 @@ const Header = () => {
             <IconList />
           </div>
         </div>
+<MobileMenu/>
       </div>
     </header>
   );
