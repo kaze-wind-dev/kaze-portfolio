@@ -53,10 +53,10 @@ export default async function AboutPage() {
                 <div className={`${styles["p-profile__box"]}`}>
                   <div  className={`${styles["p-profile__image"]}`}>
                   <Image
-                    src="/images/no_image.jpg"
-                    alt="noimage"
-                    width={160}
-                    height={160}
+                    src="/images/avatar.jpg"
+                    width={360}
+                    height={360}
+                    alt="アバターの画像"
                   />
                   </div>
                   <IconList />
