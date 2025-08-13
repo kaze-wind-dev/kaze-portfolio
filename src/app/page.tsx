@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Logo from "@/components/ui/Logo";
 import Button from "@/components/ui/Button";
 import SectionTitle from "@/components/ui/SectionTitle";
@@ -56,7 +57,12 @@ export default async function Home() {
             制作者について知る
           </Button>
           <div className={styles["p-topAbout__image"]}>
-            {/* <Image></Image> */}
+            <Image
+              src="/images/avatar.jpg"
+              width={360}
+              height={360}
+              alt="アバター画像"
+            ></Image>
           </div>
         </div>
       </section>
