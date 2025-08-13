@@ -7,6 +7,11 @@ export const config = {
 export default function middleware(req: NextRequest) {
   const basicAuth = req.headers.get("authorization");
 
+  if (!process.env.BASIC_AUTH_ID || !process.env.BASIC_AUTH_PASSWORD) {
+    console.warn("Basic Auth credentials not configured");
+    return NextResponse.next();
+  }
+  
   if (!basicAuth) {
     return new Response("Authentication required", {
       status: 401,
@@ -20,7 +25,10 @@ export default function middleware(req: NextRequest) {
     const authValue = basicAuth.split(" ")[1];
     const [user, pwd] = atob(authValue).split(":");
 
-    if (user === process.env.BASIC_AUTH_ID && pwd === process.env.BASIC_AUTH_PASSWORD) {
+    if (
+      user === process.env.BASIC_AUTH_ID &&
+      pwd === process.env.BASIC_AUTH_PASSWORD
+    ) {
       return NextResponse.next();
     }
   } catch {
