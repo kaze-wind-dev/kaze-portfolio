@@ -52,7 +52,7 @@ export default async function Home() {
               フロントエンドエンジニアとして、より価値のあるWeb開発に挑戦したいと考えています。
             </p>
           </div>
-          <Button className={styles["p-topAbout__button"]} href="/works">
+          <Button className={styles["p-topAbout__button"]} href="/about">
             制作者について知る
           </Button>
           <div className={styles["p-topAbout__image"]}>
