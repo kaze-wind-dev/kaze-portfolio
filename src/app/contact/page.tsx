@@ -1,4 +1,3 @@
-// import Image from "next/image";
 import ContactForm from "@/components/ContactForm";
 import { Breadcrumbs } from "@/components/ui/BreadCrumb";
 import styles from "./page.module.scss";
@@ -10,8 +9,7 @@ export default async function ContactPage() {
       <div className="l-container">
         <div className="inner">
           <div className={`${styles["p-contact"]}`}>
-
-          <ContactForm/>
+            <ContactForm />
           </div>
         </div>
       </div>
