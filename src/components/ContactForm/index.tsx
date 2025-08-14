@@ -29,8 +29,8 @@ const ContactForm = () => {
           <input
             type="text"
             id="lastName"
+            name="lastName"
             className={`${styles["c-form__textfield"]}`}
-            
           />
         </div>
         <div className={`${styles["c-form__item"]}`}>
@@ -41,6 +41,7 @@ const ContactForm = () => {
           <input
             type="text"
             id="firstName"
+            name="firstName"
             className={`${styles["c-form__textfield"]}`}
           />
         </div>
@@ -53,6 +54,7 @@ const ContactForm = () => {
         <input
           type="text"
           id="email"
+          name="email"
           className={`${styles["c-form__textfield"]}`}
         />
       </div>
@@ -61,7 +63,10 @@ const ContactForm = () => {
           お問い合わせ内容
         </label>
         <span className={`${styles["c-form__require"]}`}>必須</span>
-        <textarea id="message" className={`${styles["c-form__textarea"]}`} />
+        <textarea 
+        id="message" 
+        name="message"
+        className={`${styles["c-form__textarea"]}`} />
       </div>
       {
         state.message && (
