@@ -81,9 +81,9 @@ export async function createFormData(state: formState, formData: FormData) {
       }),
     }
   );
-  try{
+  try {
     await result.json();
-  }catch (e){
+  } catch {
     return {
       status: "error",
       message: "お問い合わせに失敗しました。",
