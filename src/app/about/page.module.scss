@@ -12,19 +12,16 @@
   &__container {
     display: flex;
     flex-direction: column;
-    @include mixin.mq("sm") {
+    @include mixin.mq("md") {
       flex-direction: row;
       justify-content: space-between;
     }
   }
   &__left {
     margin-bottom: var(--spacing-6);
-    @include mixin.mq("sm") {
-      width: calc(100% - 210px);
-    }
     @include mixin.mq("md") {
       margin-bottom: var(--spacing-8);
-      width: calc(50% - 20px);
+      width: calc(64% - 20px);
     }
     @include mixin.mq("lg") {
       margin-bottom: 0;
@@ -32,7 +29,7 @@
   }
   &__right {
     @include mixin.mq("lg") {
-      width: calc(50% - 20px);
+      width: calc(40% - 20px);
     }
   }
   &__name {
@@ -41,9 +38,9 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    gap: 0.5em;
+    flex-wrap: wrap;
+    gap: 0 0.5em;
     margin-bottom: var(--spacing-1);
-
     @include mixin.mq("md") {
       font-size: var(--text-4xl);
     }
@@ -113,7 +110,7 @@
   }
   &__items {
     @include mixin.mq("md") {
-      width: calc(50% - 20px);
+      width: calc(60% - 20px);
     }
   }
   &__item {
@@ -203,7 +200,7 @@
       translate: -50% 0;
     }
     @include mixin.mq("md") {
-      width: calc(50% - 20px);
+      width: calc(60% - 20px);
       &::after {
         left: 120px;
       }
