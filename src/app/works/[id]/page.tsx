@@ -105,7 +105,7 @@ export default async function WorksDetailPage({ params }: Props) {
                     rel="noopener noreferrer"
                     href={data.site_url}
                   >
-                    <GoLink />
+                    <GoLink className={`${styles["p-works-detail__item-link__icon"]}`} />
                     {data.site_url}
                   </Link>
                 </section>
@@ -121,7 +121,7 @@ export default async function WorksDetailPage({ params }: Props) {
                     rel="noopener noreferrer"
                     href={data.github_url}
                   >
-                    <GoLink className="icon-link" />
+                    <GoLink className={`${styles["p-works-detail__item-link__icon"]}`} />
                     {data.github_url}
                   </Link>
                 </section>
@@ -137,7 +137,7 @@ export default async function WorksDetailPage({ params }: Props) {
                     rel="noopener noreferrer"
                     href={data.design_url}
                   >
-                    <GoLink className="icon-link" />
+                    <GoLink className={`${styles["p-works-detail__item-link__icon"]}`} />
                     {data.design_url}
                   </Link>
                 </section>
