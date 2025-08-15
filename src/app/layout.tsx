@@ -21,7 +21,7 @@ const OutfitFont = Outfit({
 });
 
 export const metadata: Metadata = {
-  // metadataBase: new URL("https://example.com"), // 公開前に変更
+  metadataBase: new URL("https://portfolio.kaze-develop.com/"),
   title: {
     default: "Kaze Portfolio | フロントエンドエンジニアを目指して",
     template: "%s | Kaze Portfolio",
@@ -62,7 +62,6 @@ export const metadata: Metadata = {
     title: "Kaze Portfolio | フロントエンドエンジニアを目指して",
     description: "コーダーからフロントエンドエンジニアへ。React/Next.jsでモダンなWeb開発に挑戦中。",
   },
-  robots: "noindex", // まだ公開しないため拒否
 };
 
 export default function RootLayout({
