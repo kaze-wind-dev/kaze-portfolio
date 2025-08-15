@@ -4,6 +4,7 @@ export type Works = {
   title: string;
   description: string;
   site_url: string;
+  github_url: string;
   design_url: string;
   period: string;
   background: string;
