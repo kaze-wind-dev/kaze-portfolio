@@ -27,6 +27,14 @@ export const getWorksList = async (queries?: MicroCMSQueries) => {
   return listData;
 };
 
+// 作品紹介すべての記事
+export const getAllWorksList = async () => {
+  const listData = await client.getAllContents<Works>({
+    endpoint: "works",
+  });
+  return listData;
+};
+
 // 作品紹介詳細
 export const getWorksDetail = async (
   contentId: string,
@@ -51,6 +59,14 @@ export const getWorksCategoryList = async (queries?: MicroCMSQueries) => {
   const worksCategoryList = await client.getList<WorksCategory>({
     endpoint: "works-category",
     queries,
+  });
+  return worksCategoryList;
+};
+
+// 作品紹介すべてのカテゴリー
+export const getAllWorksCategoryList = async () => {
+  const worksCategoryList = await client.getAllContents<WorksCategory>({
+    endpoint: "works-category",
   });
   return worksCategoryList;
 };
