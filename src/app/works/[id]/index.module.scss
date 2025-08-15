@@ -41,6 +41,7 @@
     flex-wrap: wrap;
     @include mixin.mq("lg") {
       flex-wrap: nowrap;
+      align-items: flex-start;
       gap: var(--spacing-16);
     }
   }
@@ -50,6 +51,9 @@
       width: 50%;
       flex-shrink: 0;
       gap: var(--spacing-16);
+      position: sticky;
+      top: 124px;
+      left: 0;
     }
   }
   &__r-content {
