@@ -135,7 +135,7 @@ export default async function AboutPage() {
                   <p
                     className={`${styles["p-experience__list-item__content"]}`}
                   >
-                    情報学園専門学校へ入学。<br/>しかし授業はほとんど受けず、Udemyや書籍、ネットの情報からデザインの基礎+HTML・CSS（SCSS）のコーディングとvanillaJSの記述を独学。
+                    情報科学専門学校へ入学。<br/>しかし授業はほとんど受けず、Udemyや書籍、ネットの情報からデザインの基礎+HTML・CSS（SCSS）のコーディングとvanillaJSの記述を独学。
                   </p>
                 </li>
                 <li className={`${styles["p-experience__list-item"]}`}>
