@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     description: "コーダーからフロントエンドエンジニアへ。React/Next.jsでモダンなWeb開発に挑戦するKazeのポートフォリオサイト。",
     images: [
       {
-        url: "ogp_image.jpg",
+        url: "/ogp_image.jpg",
         width: 1200,
         height: 630,
         alt: "Kaze Portfolio OGP画像",
