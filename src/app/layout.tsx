@@ -56,6 +56,7 @@ export const metadata: Metadata = {
         alt: "Kaze Portfolio OGP画像",
       },
     ],
+    url: "https://portfolio.kaze-develop.com/"
   },
   twitter: {
     card: "summary_large_image",
