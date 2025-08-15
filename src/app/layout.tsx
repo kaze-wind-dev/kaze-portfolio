@@ -62,6 +62,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Kaze Portfolio | フロントエンドエンジニアを目指して",
     description: "コーダーからフロントエンドエンジニアへ。React/Next.jsでモダンなWeb開発に挑戦中。",
+    images: ["/ogp_image.jpg"],
   },
 };
 
