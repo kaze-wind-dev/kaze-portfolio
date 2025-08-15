@@ -10,6 +10,7 @@ export type Works = {
   technical: string;
   learned: string;
   time: string;
+  time_detail: string;
   thumbnail?: MicroCMSImage;
   images?: MicroCMSImage[];
   category: {
