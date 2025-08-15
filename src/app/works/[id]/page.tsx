@@ -110,6 +110,22 @@ export default async function WorksDetailPage({ params }: Props) {
                   </Link>
                 </section>
               )}
+               {data.github_url && (
+                <section className={`${styles["p-works-detail__item"]}`}>
+                  <h2 className={`${styles["p-works-detail__item-title"]}`}>
+                    GitHub URL
+                  </h2>
+                  <Link
+                    className={`${styles["p-works-detail__item-link"]}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href={data.github_url}
+                  >
+                    <GoLink className="icon-link" />
+                    {data.github_url}
+                  </Link>
+                </section>
+              )}
               {data.design_url && (
                 <section className={`${styles["p-works-detail__item"]}`}>
                   <h2 className={`${styles["p-works-detail__item-title"]}`}>
