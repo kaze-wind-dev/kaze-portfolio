@@ -136,13 +136,13 @@ export default async function WorksDetailPage({ params }: Props) {
                   </p>
                 </section>
               )}
-              {data.time && (
+              {data.time_detail && (
                 <section className={`${styles["p-works-detail__item"]}`}>
                   <h2 className={`${styles["p-works-detail__item-title"]}`}>
                     制作時間
                   </h2>
                   <p className={`${styles["p-works-detail__item-text"]}`}>
-                    {data.time}時間
+                    {data.time_detail}時間
                   </p>
                 </section>
               )}
