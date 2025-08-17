@@ -33,10 +33,10 @@
   @each $key, $property in $fontWeight {
     --font-weight-#{$key}: #{$property};
   }
-  --gradation-primary: #E8F4FF, #73C2FB;
+  --gradation-primary: #e8f4ff, #73c2fb;
 }
 
-html{
+html {
   scroll-behavior: smooth;
   scroll-padding-top: 96px;
 }
@@ -54,12 +54,10 @@ body {
   overflow-wrap: anywhere;
   word-break: normal;
   line-break: strict;
-  @include mixin.mq("lg"){
-    font-size: var(--text-base),
-
+  @include mixin.mq("lg") {
+    font-size: var(--text-base);
   }
 }
-
 
 a:hover {
   opacity: 0.8; /* ホバー時の透明度変更 */
@@ -82,6 +80,33 @@ a:hover {
 }
 
 /* nopost-message */
-.nopost-message{
+.nopost-message {
   font-weight: var(--font-weight-700);
-} 
+}
+
+/* logo */
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 48px;
+  @include mixin.mq("md"){
+    font-size: 56px;
+
+  }
+  @include mixin.mq("lg"){
+    font-size: 70px;
+
+  }
+  gap: 0.5em;
+  &-text {
+    font-family: var(--font-secondary);
+    font-weight: var(--font-weight-700);
+    letter-spacing: var(--tracking-none);
+    white-space: nowrap;
+  }
+  > svg {
+    width: 1.5em;
+    height: auto;
+  }
+}
