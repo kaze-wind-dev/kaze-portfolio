@@ -14,20 +14,16 @@ type Props = {
   params: Promise<{
     id: string;
   }>;
-  searchParams: {
+  searchParams: Promise<{
     draftKey?: string;
-  };
+  }>;
 };
 
 export async function generateMetadata({
   params,
-  searchParams,
 }: Props): Promise<Metadata> {
   const { id } = await params;
-  const { draftKey } = await searchParams;
-  const data = await getWorksDetail(id, {
-    draftKey: draftKey,
-  }).catch(notFound);
+  const data = await getWorksDetail(id).catch(notFound);
   if (!data) {
     notFound();
   }
@@ -49,10 +45,12 @@ export async function generateMetadata({
   };
 }
 
-export default async function WorksDetailPage({ params }: Props) {
+export default async function WorksDetailPage({ params, searchParams }: Props) {
   const { id } = await params;
-  const data = await getWorksDetail(id);
-
+  const { draftKey } = await searchParams;
+  const data = await getWorksDetail(id, {
+    draftKey: draftKey,
+  }).catch(notFound);
   return (
     <main>
       <Breadcrumbs
