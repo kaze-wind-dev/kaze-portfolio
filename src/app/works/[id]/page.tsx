@@ -14,11 +14,20 @@ type Props = {
   params: Promise<{
     id: string;
   }>;
+  searchParams: {
+    draftKey?: string;
+  };
 };
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const {id} = await params;
-  const data = await getWorksDetail(id);
+export async function generateMetadata({
+  params,
+  searchParams,
+}: Props): Promise<Metadata> {
+  const { id } = await params;
+  const { draftKey } = await searchParams;
+  const data = await getWorksDetail(id, {
+    draftKey: draftKey,
+  }).catch(notFound);
   if (!data) {
     notFound();
   }
@@ -41,7 +50,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function WorksDetailPage({ params }: Props) {
-  const {id} = await params;
+  const { id } = await params;
   const data = await getWorksDetail(id);
 
   return (
@@ -105,12 +114,14 @@ export default async function WorksDetailPage({ params }: Props) {
                     rel="noopener noreferrer"
                     href={data.site_url}
                   >
-                    <GoLink className={`${styles["p-works-detail__item-link__icon"]}`} />
+                    <GoLink
+                      className={`${styles["p-works-detail__item-link__icon"]}`}
+                    />
                     {data.site_url}
                   </Link>
                 </section>
               )}
-               {data.github_url && (
+              {data.github_url && (
                 <section className={`${styles["p-works-detail__item"]}`}>
                   <h2 className={`${styles["p-works-detail__item-title"]}`}>
                     GitHub URL
@@ -121,7 +132,9 @@ export default async function WorksDetailPage({ params }: Props) {
                     rel="noopener noreferrer"
                     href={data.github_url}
                   >
-                    <GoLink className={`${styles["p-works-detail__item-link__icon"]}`} />
+                    <GoLink
+                      className={`${styles["p-works-detail__item-link__icon"]}`}
+                    />
                     {data.github_url}
                   </Link>
                 </section>
@@ -137,7 +150,9 @@ export default async function WorksDetailPage({ params }: Props) {
                     rel="noopener noreferrer"
                     href={data.design_url}
                   >
-                    <GoLink className={`${styles["p-works-detail__item-link__icon"]}`} />
+                    <GoLink
+                      className={`${styles["p-works-detail__item-link__icon"]}`}
+                    />
                     {data.design_url}
                   </Link>
                 </section>
@@ -195,7 +210,9 @@ export default async function WorksDetailPage({ params }: Props) {
             </div>
           </div>
           <div className={`${styles["p-works-detail__button"]}`}>
-            <Button href="/works" className="mx-center">一覧に戻る</Button>
+            <Button href="/works" className="mx-center">
+              一覧に戻る
+            </Button>
           </div>
         </div>
       </article>
