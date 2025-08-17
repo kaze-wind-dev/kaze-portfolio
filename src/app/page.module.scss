@@ -35,12 +35,14 @@
   &__logo {
     order: 1;
     margin-bottom: var(--spacing-8);
-    font-size: min(10vw, 48px);
+    font-size: min(10vw, 3rem);
     @include mixin.mq("md") {
       margin-bottom: var(--spacing-10);
+      font-size: 3.5rem;
     }
     @include mixin.mq("lg") {
       margin-bottom: var(--spacing-12);
+      font-size: 4.375rem;
     }
   }
   &__links {
