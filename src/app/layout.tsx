@@ -5,7 +5,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 
 const ZenKakuGothicNewFont = Zen_Kaku_Gothic_New({
-  weight: ["400", "500", "700"],
+  weight: ["500", "700"],
   subsets: ["latin"],
   variable: "--font-zenkaku-gothic-new",
   display: "swap",
@@ -47,8 +47,7 @@ export const metadata: Metadata = {
     type: "website",
     siteName: "Kaze Portfolio",
     title: "Kaze Portfolio | フロントエンドエンジニアを目指して",
-    description:
-      "コーダーからフロントエンドエンジニアへ。React/Next.jsでモダンなWeb開発に挑戦するKazeのポートフォリオサイト。",
+    description: "コーダーからフロントエンドエンジニアへ。React/Next.jsでモダンなWeb開発に挑戦するKazeのポートフォリオサイト。",
     images: [
       {
         url: "/ogp_image.jpg",
@@ -57,18 +56,13 @@ export const metadata: Metadata = {
         alt: "Kaze Portfolio OGP画像",
       },
     ],
-    url: "https://portfolio.kaze-develop.com/",
+    url: "https://portfolio.kaze-develop.com/"
   },
   twitter: {
     card: "summary_large_image",
     title: "Kaze Portfolio | フロントエンドエンジニアを目指して",
-    description:
-      "コーダーからフロントエンドエンジニアへ。React/Next.jsでモダンなWeb開発に挑戦中。",
+    description: "コーダーからフロントエンドエンジニアへ。React/Next.jsでモダンなWeb開発に挑戦中。",
     images: ["/ogp_image.jpg"],
-  },
-  robots: {
-    index: true,
-    follow: true,
   },
 };
 
