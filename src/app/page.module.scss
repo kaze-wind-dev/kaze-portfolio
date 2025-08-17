@@ -34,18 +34,12 @@
   }
   &__logo {
     order: 1;
-    width: min(100%, 320px);
     margin-bottom: var(--spacing-8);
-    > svg {
-      width: 100%;
-      height: auto;
-    }
+    font-size: min(10vw, 48px);
     @include mixin.mq("md") {
-      width: 480px;
       margin-bottom: var(--spacing-10);
     }
     @include mixin.mq("lg") {
-      width: 581px;
       margin-bottom: var(--spacing-12);
     }
   }
