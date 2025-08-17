@@ -1,36 +1,78 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Kaze Portfolio
 
-## Getting Started
+モダンフロントエンド技術を活用したポートフォリオサイト
 
-First, run the development server:
+## サイト情報
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **URL**: https://portfolio.kaze-develop.com/
+- **技術スタック**: Next.js 15.3.5, TypeScript, SCSS
+- **デプロイ**: Vercel
+
+## プロジェクト概要
+
+コーダーからフロントエンドエンジニアへのキャリアチェンジを目指し、モダンなJamstack技術を活用して制作したポートフォリオサイトです。
+実務4年の経験を活かしつつ、最新のReact/Next.jsでの開発を行いました。
+
+## 主な特徴
+
+- **レスポンシブデザイン**: モバイルファーストでコーディングされたUI/UX
+- **パフォーマンス最適化**: Next.js 15の最新機能を活用
+- **アニメーション**: IntersectionObserverやSplideを用いたマイクロインタラクション
+- **SEO対策**: メタデータ最適化とサイトマップ生成
+
+## 技術スタック
+
+### フロントエンド
+
+- **Next.js 15.3.5** - React フレームワーク（App Router使用）
+- **TypeScript** - 型安全な開発
+- **Sass/SCSS** - CSS設計手法（BEM/FLOCSS）
+- **React.js** - コンポーネントベース開発
+
+### API・データ連携
+
+- **microCMS** - 記事一覧・詳細情報
+- **Zenn API** - 記事一覧
+
+### 開発・デプロイメント
+
+- **Vercel** - ホスティング・CI/CD（Next.js最適化）
+- **SSG/ISR** - 静的生成・段階的静的再生成
+- **Git** - バージョン管理
+- **ESLint/Prettier** - コード品質管理
+
+### パフォーマンス・品質
+
+- **Core Web Vitals** - 良好な評価
+- **SEO最適化** - 構造化データ・メタタグ対応
+
+## プロジェクト構成
+
+```
+├── app/
+│   ├── components/         # 再利用可能なコンポーネント
+│   ├── (pages)/            # ページコンポーネント
+│   ├── globals.css         # グローバルスタイル
+│   └── layout.tsx          # ルートレイアウト
+├── public/
+│   └── images/             # 画像アセット
+├── types/                  # TypeScript型定義
+├── libs/                   # ユーティリティ関数・API連携
+└── styles/                 # スタイル
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 作業時間
+約110時間
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 今後の予定
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **GSAP導入**: アニメーション実装
+- **アクセシビリティ強化**
 
-## Learn More
+## お問い合わせ
 
-To learn more about Next.js, take a look at the following resources:
+ポートフォリオに関するご意見やご質問などは以下からお気軽にどうぞ。
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Portfolio**: https://portfolio.kaze-develop.com/
+- **GitHub**: https://github.com/kaze-wind-dev
