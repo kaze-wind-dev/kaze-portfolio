@@ -154,6 +154,7 @@
   }
   &__item-text {
     line-height: var(--leading-lg);
+    white-space: pre-wrap;
   }
   &__button {
     margin-top: var(--spacing-14);
