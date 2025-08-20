@@ -1,3 +1,4 @@
+"use cache";
 import { notFound } from "next/navigation";
 import { WORKS_LIST_LIMIT } from "@/constants";
 import {

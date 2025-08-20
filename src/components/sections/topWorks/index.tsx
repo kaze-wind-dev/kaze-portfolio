@@ -26,22 +26,19 @@ const TopWorks = ({ works }: Props) => {
     fixedWidth: "300px",
     breakpoints: {
       960: {
-    gap: "1.5rem",
-    
-    fixedWidth: "280px",
-  },
-  560: {
-    fixedWidth: "64%",
-    
-  },
-  480: {
+        gap: "1.5rem",
+
+        fixedWidth: "280px",
+      },
+      560: {
+        fixedWidth: "64%",
+      },
+      480: {
         gap: "1rem",
         fixedWidth: "72%",
-        
       },
       400: {
         fixedWidth: "80%",
-        
       },
     },
   };

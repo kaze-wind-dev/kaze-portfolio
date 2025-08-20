@@ -1,3 +1,4 @@
+"use cache";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/BreadCrumb";
 import styles from "./page.module.scss";

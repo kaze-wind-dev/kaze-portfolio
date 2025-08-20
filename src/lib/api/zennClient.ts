@@ -1,10 +1,15 @@
-// import type { ZennUserName } from "@/types/zenn";
 
 function zennAPIClient(username: string) {
   async function get() {
     try {
       const response = await fetch(
-        `https://zenn.dev/api/articles?username=${username}&order=latest`
+        `https://zenn.dev/api/articles?username=${username}&order=latest`,
+        {
+          next: {
+            revalidate: 600,
+            tags: ["zenn-articles"],
+          },
+        }
       );
       if (!response.ok) {
         throw new Error("接続エラーが発生しました");
