@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description: "ご意見やご感想、気なることなどございましたら、以下のフォームよりお問い合わせください。",
 };
 
-export default function AboutLayout({
+export default function ContactLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;

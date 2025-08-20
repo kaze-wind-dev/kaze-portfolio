@@ -1,3 +1,4 @@
+"use cache";
 import { WORKS_LIST_LIMIT } from "@/constants";
 import { getWorksList, getWorksCategoryList } from "@/lib/api/microcms";
 import { Breadcrumbs } from "@/components/ui/BreadCrumb";

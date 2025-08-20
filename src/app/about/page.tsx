@@ -1,3 +1,4 @@
+"use cache";
 import Image from "next/image";
 import { Breadcrumbs } from "@/components/ui/BreadCrumb";
 import IconList from "@/components/ui/IconList";

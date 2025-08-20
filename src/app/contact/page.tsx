@@ -1,3 +1,4 @@
+"use cache";
 import ContactForm from "@/components/ContactForm";
 import { Breadcrumbs } from "@/components/ui/BreadCrumb";
 import styles from "./page.module.scss";
