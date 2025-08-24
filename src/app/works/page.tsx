@@ -2,6 +2,7 @@
 import { WORKS_LIST_LIMIT } from "@/constants";
 import { getWorksList, getWorksCategoryList } from "@/lib/api/microcms";
 import { Breadcrumbs } from "@/components/ui/BreadCrumb";
+import SectionTitle from "@/components/ui/SectionTitle";
 import WorksCard from "@/components/ui/Card/WorksCard";
 import CardsContainer from "@/components/ui/CardsContainer";
 import CategoryFilter from "@/components/ui/CategoryFilter";
@@ -14,13 +15,19 @@ export default async function WorkListPage() {
     limit: WORKS_LIST_LIMIT,
   });
   const { contents: categories } = await getWorksCategoryList();
-  
+
   return (
     <WorksListLayout>
       <Breadcrumbs items={[{ name: "Works" }]} />
       <div className="l-container">
-        <div className={`${styles["p-works"]}`}>
+        <section className={`${styles["p-works"]}`}>
           <div className="inner">
+            <SectionTitle
+              className="sr-only"
+              heading={<>Works</>}
+              text={<>作品一覧</>}
+              position="left"
+            />
             <CategoryFilter categories={categories} basePath="works" />
             {works.length === 0 ? (
               <p className="nopost-message">現在投稿はございません。</p>
@@ -39,7 +46,7 @@ export default async function WorkListPage() {
               </>
             )}
           </div>
-        </div>
+        </section>
       </div>
     </WorksListLayout>
   );

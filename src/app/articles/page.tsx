@@ -1,5 +1,6 @@
 import { Breadcrumbs } from "@/components/ui/BreadCrumb";
 import ArticlesClient from "@/components/ArticlesClient";
+import SectionTitle from "@/components/ui/SectionTitle";
 import { getZennArticles } from "@/lib/api/zennFunctions";
 import styles from "./page.module.scss";
 import { ZennArticle } from "@/types/zenn";
@@ -22,8 +23,14 @@ export default async function ArticlesListPage({ searchParams }: Props) {
     <>
       <Breadcrumbs items={[{ name: "Articles" }]} />
       <div className="l-container">
-        <div className={`${styles["p-articles"]}`}>
+        <section className={`${styles["p-articles"]}`}>
           <div className="inner">
+            <SectionTitle
+            className="sr-only"
+            heading={<>Articles</>}
+            text={<>記事一覧</>}
+            position="left"
+          />
             <ArticlesClient
               initialArticles={fetchData.articles}
               initialSortKey={qSortKey}
@@ -31,7 +38,7 @@ export default async function ArticlesListPage({ searchParams }: Props) {
               initialSearchQuery={qSearchQuery}
             />
           </div>
-        </div>
+        </section>
       </div>
     </>
   );
