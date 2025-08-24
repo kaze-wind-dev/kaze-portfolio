@@ -9,12 +9,12 @@ const IconList = () => {
   return (
     <ul className={`${styles.iconList}`}>
       <li className={`${styles.iconList__item}`}>
-        <Link className={`${styles.iconList__link}`} href={GITHUB_LINK} target="_blank">
+        <Link className={`${styles.iconList__link}`} href={GITHUB_LINK} target="_blank" rel="noopener noreferrer" aria-label="GitHubのリンク">
           <FaGithub />
         </Link>
       </li>
       <li className={`${styles.iconList__item}`}>
-        <Link className={`${styles.iconList__link}`} href={ZENN_LINK} target="_blank">
+        <Link className={`${styles.iconList__link}`} href={ZENN_LINK} target="_blank" rel="noopener noreferrer" aria-label="Zennのリンク">
           <SiZenn color="#3EA8FF"/>
         </Link>
       </li>
