@@ -7,6 +7,5 @@ if (!process.env.ZENN_USERNAME) {
 const client = zennAPIClient(process.env.ZENN_USERNAME);
 
 export async function getZennArticles() {
-  "use cache";
   return await client.get();
 }
