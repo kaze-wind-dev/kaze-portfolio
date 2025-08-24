@@ -23,6 +23,11 @@ export const getWorksList = async (queries?: MicroCMSQueries) => {
   const listData = await client.getList<Works>({
     endpoint: "works",
     queries,
+    customRequestInit: {
+      next: {
+        revalidate: 600,
+      },
+    },
   });
   return listData;
 };
@@ -46,7 +51,8 @@ export const getWorksDetail = async (
     queries,
     customRequestInit: {
       next: {
-        revalidate: queries?.draftKey === undefined ? 60 : 0,
+        revalidate: queries?.draftKey === undefined ? 600 : 0,
+        tags: ["works"],
       },
     },
   });
@@ -59,6 +65,9 @@ export const getWorksCategoryList = async (queries?: MicroCMSQueries) => {
   const worksCategoryList = await client.getList<WorksCategory>({
     endpoint: "works-category",
     queries,
+    customRequestInit: {
+      next: { revalidate: 600, tags: ["works-category"] },
+    },
   });
   return worksCategoryList;
 };
@@ -79,6 +88,9 @@ export const getCategoryDetail = async (
     endpoint: "works-category",
     contentId,
     queries,
+    customRequestInit: {
+      next: { revalidate: 600, tags: ["works-category"] },
+    },
   });
   return detailData;
 };
