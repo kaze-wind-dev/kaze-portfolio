@@ -1,4 +1,3 @@
-
 function zennAPIClient(username: string) {
   async function get() {
     try {
@@ -9,6 +8,7 @@ function zennAPIClient(username: string) {
             revalidate: 600,
             tags: ["zenn-articles"],
           },
+          cache: "force-cache",
         }
       );
       if (!response.ok) {
