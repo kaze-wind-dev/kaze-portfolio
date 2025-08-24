@@ -18,7 +18,8 @@ const CardHeader = ({ title, thumbnail, emoji, children }: CardHeaderProps) => {
             src={thumbnail?.url || `/images/no_image.jpg`}
             width={thumbnail?.height || 640}
             height={thumbnail?.width || 480}
-            alt={thumbnail?.alt || `no image`}
+            alt={thumbnail.url ? title : `no image`}
+            loading="lazy"
           />
         </figure>
       ) : emoji ? (
@@ -30,6 +31,7 @@ const CardHeader = ({ title, thumbnail, emoji, children }: CardHeaderProps) => {
             width={640}
             height={480}
             alt={`no image`}
+            loading="lazy"
           />
         </figure>
       )}

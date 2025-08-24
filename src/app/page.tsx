@@ -70,6 +70,7 @@ export default async function Home() {
               width={360}
               height={360}
               alt="アバター画像"
+              loading="lazy"
             ></Image>
           </div>
         </div>

@@ -159,6 +159,7 @@ const TopSkill = () => {
                 alt={logo.alt}
                 width={logo.width}
                 height={logo.height}
+                loading="lazy"
               />
             </SplideSlide>
           );

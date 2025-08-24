@@ -58,6 +58,7 @@ export default async function AboutPage() {
                     width={360}
                     height={360}
                     alt="アバターの画像"
+                    loading="lazy"
                   />
                   </div>
                   <IconList />
