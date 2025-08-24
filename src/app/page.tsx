@@ -57,8 +57,12 @@ export default async function Home() {
               フロントエンドエンジニアとして、より価値のあるWeb開発に挑戦したいと考えています。
             </p>
           </div>
-          <Button className={styles["p-topAbout__button"]} href="/about">
-            制作者について知る
+          <Button
+            className={styles["p-topAbout__button"]}
+            href="/about"
+            aria-label="制作者について詳しく見る"
+          >
+            詳しく見る
           </Button>
           <div className={styles["p-topAbout__image"]}>
             <Image
