@@ -16,8 +16,8 @@ const OutfitFont = Outfit({
   weight: "700",
   subsets: ["latin"],
   variable: "--font-outfit",
-  preload: true,
   display: "swap",
+  preload: false,
 });
 
 export const metadata: Metadata = {
