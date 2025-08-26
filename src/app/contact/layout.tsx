@@ -5,7 +5,7 @@ export const revalidate = 86400;
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "ご意見やご感想、気なることなどございましたら、以下のフォームよりお問い合わせください。",
+  description: "ご意見やご感想、気になることなどございましたら、以下のフォームよりお問い合わせください。",
 };
 
 export default function ContactLayout({
@@ -18,7 +18,7 @@ export default function ContactLayout({
       hero={{
         heading: "Contact",
         subTitle: "お問い合わせ",
-        pageDescription:"ご意見やご感想、気なることなどございましたら、以下のフォームよりお問い合わせください。"
+        pageDescription:"ご意見やご感想、気になることなどございましたら、以下のフォームよりお問い合わせください。"
         
       }}
     >
