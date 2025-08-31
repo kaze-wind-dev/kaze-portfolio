@@ -7,6 +7,7 @@ import { Splide, SplideSlide } from "@splidejs/react-splide";
 import SectionTitle from "@/components/ui/SectionTitle";
 import ArticleCard from "@/components/ui/Card/ArticleCard";
 import CustomSplideArrows from "@/components/ui/CustomSprideArrows";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import type { ZennArticle } from "@/types/zenn";
 import styles from "./index.module.scss";
 
@@ -14,6 +15,7 @@ type Props = {
   articles: ZennArticle[];
 };
 const TopArticles = ({ articles }: Props) => {
+  const { animationContainer, addToAnimationRefs } = useScrollAnimation();
   const splideRef = useRef(null);
 
   const splideOptions = {
@@ -43,9 +45,9 @@ const TopArticles = ({ articles }: Props) => {
   };
 
   return (
-    <section className={styles["p-topArticles"]}>
+    <section className={styles["p-topArticles"]} ref={animationContainer}>
       <div className={`${styles["p-topArticles__inner"]}`}>
-        <header className={`${styles["p-topArticles__header"]}`}>
+        <header className={`${styles["p-topArticles__header"]}`} ref={addToAnimationRefs}>
           <SectionTitle
             className={styles["p-topArticles__title"]}
             heading={<>Articles</>}
@@ -65,6 +67,7 @@ const TopArticles = ({ articles }: Props) => {
             />
           </div>
         </header>
+        <div ref={addToAnimationRefs}>
         <Splide
           options={splideOptions}
           aria-label="Zenn記事の一覧"
@@ -83,6 +86,7 @@ const TopArticles = ({ articles }: Props) => {
             );
           })}
         </Splide>
+        </div>
       </div>
     </section>
   );

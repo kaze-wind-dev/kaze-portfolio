@@ -7,6 +7,7 @@ import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
 import Button from "@/components/ui/Button";
 import SectionTitle from "@/components/ui/SectionTitle";
 import { useInview } from "@/hooks/useInview";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import "@splidejs/react-splide/css";
 import styles from "./index.module.scss";
 
@@ -91,6 +92,7 @@ const skillLogos = [
 ];
 
 const TopSkill = () => {
+  const { animationContainer, addToAnimationRefs } = useScrollAnimation();
   const ref = useRef<HTMLElement>(null);
   const splideRef = useRef(null);
 
@@ -121,15 +123,18 @@ const TopSkill = () => {
       }
     }
   }, [inview]);
-  
+
   return (
     <section className={styles["p-topSkill"]} ref={ref}>
+      <div ref={animationContainer}>
+
       <SectionTitle
         className={styles["p-topSkill__title"]}
         heading={<>Skill</>}
         text={<>スキル概要</>}
+        ref={addToAnimationRefs}
       />
-      <div>
+      <div ref={addToAnimationRefs}>
         <p className={styles["p-topSkill__text"]}>
           HTML・Sass・PHP・自社CMSを使用してサイト制作を行っています。
           <br />
@@ -139,35 +144,42 @@ const TopSkill = () => {
           現在は、React.jsやNext.jsなどモダンフロント技術を学んでいます。
         </p>
       </div>
-      <Splide
-        options={splideOptions}
-        aria-label="実務や学習で使用している言語"
-        tag="section"
-        extensions={{ AutoScroll }}
-        className={styles["p-topSkill__slider"]}
-        ref={splideRef}
+      <div ref={addToAnimationRefs}>
+        <Splide
+          options={splideOptions}
+          aria-label="実務や学習で使用している言語"
+          tag="section"
+          extensions={{ AutoScroll }}
+          className={styles["p-topSkill__slider"]}
+          ref={splideRef}
+        >
+          {skillLogos.map((logo) => {
+            const uniqueClassName = `p-topSkill__slider-slide--${logo.id}`;
+            return (
+              <SplideSlide
+                className={`${styles["p-topSkill__slider-slide"]} ${styles[uniqueClassName]}`}
+                key={logo.id}
+              >
+                <Image
+                  src={logo.src}
+                  alt={logo.alt}
+                  width={logo.width}
+                  height={logo.height}
+                  loading="lazy"
+                />
+              </SplideSlide>
+            );
+          })}
+        </Splide>
+      </div>
+      <Button
+        className={styles["p-topSkill__button"]}
+        href="/about/#skills"
+        ref={addToAnimationRefs}
       >
-        {skillLogos.map((logo) => {
-          const uniqueClassName = `p-topSkill__slider-slide--${logo.id}`;
-          return (
-            <SplideSlide
-              className={`${styles["p-topSkill__slider-slide"]} ${styles[uniqueClassName]}`}
-              key={logo.id}
-            >
-              <Image
-                src={logo.src}
-                alt={logo.alt}
-                width={logo.width}
-                height={logo.height}
-                loading="lazy"
-              />
-            </SplideSlide>
-          );
-        })}
-      </Splide>
-      <Button className={styles["p-topSkill__button"]} href="/about/#skills">
         スキルについて
       </Button>
+      </div>
     </section>
   );
 };
