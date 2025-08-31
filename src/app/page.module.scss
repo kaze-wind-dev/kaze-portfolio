@@ -4,6 +4,8 @@
 .p-topHero {
   background: linear-gradient(45deg, var(--gradation-primary));
   padding-block: 64px;
+  position: relative;
+  z-index: 1;
   @include mixin.mq("sm") {
     padding-block: 80px;
   }
@@ -115,5 +117,14 @@
         animation-timing-function: ease-in-out;
       }
     }
+  }
+}
+
+@keyframes scroll-bar {
+  0% {
+    translate: 0 -100%;
+  }
+  90%,100% {
+      translate: 0 100%;
   }
 }
