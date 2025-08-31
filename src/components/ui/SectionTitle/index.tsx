@@ -1,3 +1,4 @@
+import { forwardRef } from "react";
 import styles from "./index.module.scss";
 
 type SectionTitleProps = {
@@ -7,23 +8,25 @@ heading:React.ReactNode,
 text:React.ReactNode,
 };
 
-const SectionTitle = ({
+const SectionTitle = forwardRef<HTMLElement, SectionTitleProps>(({
   className,
   position = "center",
   heading,
   text
-}: SectionTitleProps) => {
-
+}, ref) => {
   const parentClasses = [
     styles['c-section-title'],
     styles[`c-section-title--${position}`],
   ].join(" ");
+
   return (
-    <hgroup className={`${parentClasses} ${className || ''}` }>
+    <hgroup className={`${parentClasses} ${className || ''}`} ref={ref}>
       <h2 className={`${styles['c-section-title__heading']}`}>{heading}</h2>
       <p className={`${styles['c-section-title__text']}`}>{text}</p>
     </hgroup>
   );
-};
+});
+
+SectionTitle.displayName = 'SectionTitle';
 
 export default SectionTitle;
