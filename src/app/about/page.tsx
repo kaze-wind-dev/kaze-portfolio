@@ -29,7 +29,7 @@ const skillsSectionItems: skillContentList = [
 export default async function AboutPage() {
   return (
     <>
-      <Breadcrumbs items={[{ name: "Articles" }]} />
+      <Breadcrumbs items={[{ name: "About" }]} />
       <div className="l-container">
         <section className={`${styles["p-profile"]}`}>
           <div className="inner">
